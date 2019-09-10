@@ -28,13 +28,13 @@ public class LibraryController {
     return "index";
   }
 
-  @GetMapping("/new")
+  @GetMapping("/createAccount")
   public String addUserPage(Model m) {
     m.addAttribute("user", new User());
     return "new";
   }
 
-  @PostMapping("/new")
+  @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
     attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
     userDAO.save(user);
