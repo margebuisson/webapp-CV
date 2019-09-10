@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Acceuil</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+<p class = "text-center"> Welcome to your CV creator ! </p>
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td scope="row"th:text="${user.firstname}"></td>
+            <td th:text="${user.lastname}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+
+</html>
