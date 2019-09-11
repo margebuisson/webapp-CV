@@ -13,5 +13,4 @@ data class User(
                 @Column(name = "last_name") var lastName: String?,
                 @Column(name = "age") var age: Int?) {
     constructor() : this(null, null, null, null)
-
 }
