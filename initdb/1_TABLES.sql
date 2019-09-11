@@ -7,3 +7,6 @@ create table users
     last_name TEXT not null,
     age int null
 );
+
+
+
