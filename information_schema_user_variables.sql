@@ -1,0 +1,1 @@
+UPDATE information_schema.user_variables SET VARIABLE_NAME = 'ApplicationName', VARIABLE_VALUE = 'IntelliJ IDEA 2019.2.2', VARIABLE_TYPE = 'VARCHAR', CHARACTER_SET_NAME = 'utf8mb4';

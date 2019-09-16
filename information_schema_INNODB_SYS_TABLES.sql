@@ -1,0 +1,10 @@
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 14, NAME = 'SYS_DATAFILES', FLAG = 0, N_COLS = 5, SPACE = 0, ROW_FORMAT = 'Redundant', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'System';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 11, NAME = 'SYS_FOREIGN', FLAG = 0, N_COLS = 7, SPACE = 0, ROW_FORMAT = 'Redundant', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'System';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 12, NAME = 'SYS_FOREIGN_COLS', FLAG = 0, N_COLS = 7, SPACE = 0, ROW_FORMAT = 'Redundant', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'System';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 13, NAME = 'SYS_TABLESPACES', FLAG = 0, N_COLS = 6, SPACE = 0, ROW_FORMAT = 'Redundant', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'System';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 15, NAME = 'SYS_VIRTUAL', FLAG = 0, N_COLS = 6, SPACE = 0, ROW_FORMAT = 'Redundant', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'System';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 20, NAME = 'defaultdb/users', FLAG = 33, N_COLS = 6, SPACE = 5, ROW_FORMAT = 'Dynamic', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'Single';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 19, NAME = 'mysql/gtid_slave_pos', FLAG = 33, N_COLS = 7, SPACE = 4, ROW_FORMAT = 'Dynamic', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'Single';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 17, NAME = 'mysql/innodb_index_stats', FLAG = 33, N_COLS = 11, SPACE = 2, ROW_FORMAT = 'Dynamic', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'Single';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 16, NAME = 'mysql/innodb_table_stats', FLAG = 33, N_COLS = 9, SPACE = 1, ROW_FORMAT = 'Dynamic', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'Single';
+UPDATE information_schema.INNODB_SYS_TABLES SET TABLE_ID = 18, NAME = 'mysql/transaction_registry', FLAG = 33, N_COLS = 8, SPACE = 3, ROW_FORMAT = 'Dynamic', ZIP_PAGE_SIZE = 0, SPACE_TYPE = 'Single';
