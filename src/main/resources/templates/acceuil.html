@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Acceuil</title>
+    <title>Home Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -27,8 +27,8 @@
             <td scope="row"th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td>
-                <button type=submit name=action>
-                    <img src="../images/modifier.jpg" height="50" width="50">
+                <button type=submit class="rounded">
+                    <img src="../images/modifier-png-6.png" height="50" width="50">
                 </button>
             </td>
         </tr>
@@ -40,7 +40,7 @@
 <h2 class="text-center"> New on this website ? Just sign in ! </h2>
 
     <center>
-        <button class="text-center" type=submit> Sign in </button>
+        <button type=submit class="btn btn-primary" href="/formulaire"> Sign in </button>
     </center>
 
 </body>
