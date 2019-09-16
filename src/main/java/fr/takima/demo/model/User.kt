@@ -16,9 +16,9 @@ data class User(
         @Column(name = "city") var city: String?,
         @Column(name = "zip_code") var zipCode: Int?,
         @Column(name = "mail") var mail: String?,
-        @Column(name = "telephone") var telephone: Int?,
-        @Column(name = "profilPicture") var profilPicture: String?,
-        @Column(name = "birthDate") var birthDate: Date?) {
+        @Column(name = "mobile_phone") var mobilePhone: Int?,
+        @Column(name = "profil_picture") var profilPicture: String?,
+        @Column(name = "birthdate") var birthdate: String?) {
     constructor() : this(null, null, null, null, null,null, null,
             null, null, null)
 

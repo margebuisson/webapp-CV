@@ -14,7 +14,6 @@ import org.springframework.web.servlet.view.RedirectView;
 /**
  *
  */
-@RequestMapping("/")
 @Controller
 public class UserController {
 
@@ -24,17 +23,18 @@ public class UserController {
     this.userDAO = userDAO;
   }
 
-  @GetMapping("/homepage")
+  @GetMapping("/")
   public String homePage(Model m) {
     m.addAttribute("users", userDAO.findAll());
-    return "index";
+    return "acceuil";
   }
 
   @GetMapping("/createAccount")
   public String addUserPage(Model m) {
     m.addAttribute("user", new User());
-    return "new";
+    return "formulaire";
   }
+
 
   @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
@@ -42,5 +42,10 @@ public class UserController {
     userDAO.save(user);
     return new RedirectView("/");
   }
+
+  /*@PostMapping("/")
+  public RedirectView signIn(@ModelAttribute User user, RedirectAttributes attrs) {
+    return new RedirectView("/createAccount");
+  }*/
 
 }
