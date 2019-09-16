@@ -1,0 +1,5 @@
+UPDATE information_schema.INNODB_CMPMEM SET page_size = 1024, buffer_pool_instance = 0, pages_used = 0, pages_free = 0, relocation_ops = 0, relocation_time = 0;
+UPDATE information_schema.INNODB_CMPMEM SET page_size = 2048, buffer_pool_instance = 0, pages_used = 0, pages_free = 0, relocation_ops = 0, relocation_time = 0;
+UPDATE information_schema.INNODB_CMPMEM SET page_size = 4096, buffer_pool_instance = 0, pages_used = 0, pages_free = 0, relocation_ops = 0, relocation_time = 0;
+UPDATE information_schema.INNODB_CMPMEM SET page_size = 8192, buffer_pool_instance = 0, pages_used = 0, pages_free = 0, relocation_ops = 0, relocation_time = 0;
+UPDATE information_schema.INNODB_CMPMEM SET page_size = 16384, buffer_pool_instance = 0, pages_used = 0, pages_free = 0, relocation_ops = 0, relocation_time = 0;

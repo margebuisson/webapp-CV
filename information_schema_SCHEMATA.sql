@@ -1,0 +1,4 @@
+UPDATE information_schema.SCHEMATA SET CATALOG_NAME = 'def', SCHEMA_NAME = 'information_schema', DEFAULT_CHARACTER_SET_NAME = 'utf8', DEFAULT_COLLATION_NAME = 'utf8_general_ci', SQL_PATH = null;
+UPDATE information_schema.SCHEMATA SET CATALOG_NAME = 'def', SCHEMA_NAME = 'defaultdb', DEFAULT_CHARACTER_SET_NAME = 'latin1', DEFAULT_COLLATION_NAME = 'latin1_swedish_ci', SQL_PATH = null;
+UPDATE information_schema.SCHEMATA SET CATALOG_NAME = 'def', SCHEMA_NAME = 'mysql', DEFAULT_CHARACTER_SET_NAME = 'latin1', DEFAULT_COLLATION_NAME = 'latin1_swedish_ci', SQL_PATH = null;
+UPDATE information_schema.SCHEMATA SET CATALOG_NAME = 'def', SCHEMA_NAME = 'performance_schema', DEFAULT_CHARACTER_SET_NAME = 'utf8', DEFAULT_COLLATION_NAME = 'utf8_general_ci', SQL_PATH = null;
