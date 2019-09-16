@@ -36,7 +36,7 @@
         </div>
         <div>
             <label for="trainingLevel">Training Level</label>
-            <select class="custom-select mr-sm-2" id="trainingLevel">
+            <select th:field="*{trainingLevel}" class="custom-select mr-sm-2" id="trainingLevel">
                 <option selected>Choose...</option>
                 <option value="1">BAC +1</option>
                 <option value="2">BAC +2</option>
@@ -50,7 +50,7 @@
         </div>
         <div class="overflow-auto">
             <label for="trainingDescription">Training Description</label>
-            <textarea class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
+            <textarea th:field="*{trainingDescription}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Add</button>
