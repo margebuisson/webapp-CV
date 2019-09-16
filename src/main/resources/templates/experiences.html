@@ -13,32 +13,19 @@
 <h1 class = "text-center"> Please complete you professional experiences : </h1>
 
 <div class="container">
-    <form method="post" th:action="@{/experiencs}" th:object="${user}">
-        <center>
-            <div class="form-group">
-                <img src="../images/personne.png" height="200" width="200">
-            </div>
-            <div class="form-group">
-                <label for="avatar">Choose a profile picture:</label>
-                <input type="file" th:field="*{profilePicture}"
-                       id="avatar" name="avatar"
-                       accept="image/png, image/jpeg">
-            </div>
-        </center>
+    <form method="post" th:action="@{/experiences}" th:object="${experience}">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="firstNameInput">First Name</label>
-                <input type="text" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Enter first name">
-                <small id="firstNameHelp" class="form-text text-muted">Having a first name is always more convenient.</small>
+                <label for="jobTitleInput">Job title</label>
+                <input type="text" th:field="*{experience.jobTitle}" class="form-control" id="jobTitleInput" aria-describedby="firstNameHelp" placeholder="Enter job name">
             </div>
             <div class="form-group col-md-6">
-                <label for="lastNameInput">Last Name</label>
-                <input type="text" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Enter last name">
-                <small id="lastNameHelp" class="form-text text-muted">Having a last name is always more convenient.</small>
+                <label for="companyInput">Company</label>
+                <input type="text" th:field="*{company}" class="form-control" id="companyInput" aria-describedby="lastNameHelp" placeholder="Enter company name">
             </div>
         </div>
         <div class="form-group col-md-6">
-            <input type="date" th:field="*{birthDate} "id="birthDate">
+            <input type="date" th:field="*{contractType} "id="contract">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">

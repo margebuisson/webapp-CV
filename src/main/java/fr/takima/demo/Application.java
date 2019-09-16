@@ -19,5 +19,4 @@ public class Application {
     new SpringApplicationBuilder(Application.class)
         .run();
   }
-
 }

@@ -24,11 +24,11 @@
         </thead>
         <tbody>
         <tr th:each="user : ${users}">
-            <td scope="row"th:text="${user.firstName}"></td>
+            <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td>
                 <button type=submit name=action>
-                    <img src="../images/modifier.jpg" height="50" width="50">
+                    <img src="../static/images/modifier.jpg" height="50" width="50">
                 </button>
             </td>
         </tr>
