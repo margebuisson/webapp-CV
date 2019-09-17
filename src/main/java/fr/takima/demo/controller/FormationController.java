@@ -2,6 +2,7 @@ package fr.takima.demo.controller;
 
 import fr.takima.demo.dao.FormationDAO;
 import fr.takima.demo.model.Formation;
+import fr.takima.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,7 @@ public class FormationController {
 
     @PostMapping("/addFormation")
     public RedirectView createNewUser(@ModelAttribute Formation formation, RedirectAttributes attrs) {
-        attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
+        attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
         formationDAO.save(formation);
         return new RedirectView("/addExperience");
     }
