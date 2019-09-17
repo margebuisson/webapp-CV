@@ -12,21 +12,22 @@ public class Formation{
     @Column(name = "formation_name") private String formationName;
     @Column(name = "beg_year") private int begYear;
     @Column(name = "end_Year") private int endYear;
-    @Column(name = "diploma_Year") private String diplomaName;
     @Column(name = "city") private String city;
     @Column(name = "description") private String description;
     @Column(name = "level") private String level;
     @Column(name = "ended") private boolean ended;
 
-
-    public Formation(int begYear, int endYear, String diplomaName, String city, String description, String level, boolean ended) {
+    public Formation(String formationName, int begYear, int endYear, String city, String description, String level, boolean ended) {
         this.begYear = begYear;
         this.endYear = endYear;
-        this.diplomaName = diplomaName;
         this.city = city;
         this.description = description;
         this.level = level;
         this.ended = ended;
+        this.formationName = formationName;
+    }
+
+    public Formation() {
     }
 
     public String getFormationName() {
@@ -51,14 +52,6 @@ public class Formation{
 
     public void setEndYear(int endYear) {
         this.endYear = endYear;
-    }
-
-    public String getDiplomaName() {
-        return diplomaName;
-    }
-
-    public void setDiplomaName(String diplomaName) {
-        this.diplomaName = diplomaName;
     }
 
     public String getCity() {
