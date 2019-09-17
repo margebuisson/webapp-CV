@@ -11,7 +11,7 @@
 
 <body>
 
-<h1 class = "text-center"> Please fill in your personnal information : </h1>
+<h1 class = "titreh1"> Please fill in your personnal information : </h1>
 
 <div class="container">
     <form method="post" th:action="@{/createAccount}" th:object="${user}">
@@ -38,10 +38,14 @@
                 <small id="lastNameHelp" class="form-text text-muted">Having a last name is always more convenient.</small>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            <label for="birthDate">Birth Date</label>
-            <input type="date" th:value="birthdate" th:field="*{birthdate}" class="form-control" id="birthDate">
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="birthDate">Birth Date</label>
+                <input type="date" th:value="birthdate" th:field="*{birthdate}" class="form-control" id="birthDate">
+            </div>
         </div>
+
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
@@ -52,12 +56,16 @@
                 <input type="telephone" th:value="mobilephone" th:field="*{mobilePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
+
         <div class="form-row">
             <div class="form-group col-md-6">
+                <label for="inputAddress">Address</label>
+                <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
                 <label for="inputCity">City</label>
                 <input type="text" th:value="city" th:field="*{city}" class="form-control" id="inputCity">
             </div>
@@ -67,7 +75,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Renseigner vos études</button>
+        <div class="btn-group float-left m-3">
+            <a href="./addFormation.html" class="btn btn-primary" id="savePersonnalInfo"> Add formations </a>
+        </div>
 
     </form>
 
