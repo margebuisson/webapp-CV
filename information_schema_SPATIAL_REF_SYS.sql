@@ -1,0 +1,2 @@
+UPDATE information_schema.SPATIAL_REF_SYS SET SRID = -1, AUTH_NAME = 'Not defined', AUTH_SRID = -1, SRTEXT = 'LOCAL_CS["Spatial reference wasn''t specified",LOCAL_DATUM["Unknown",0],UNIT["m",1.0],AXIS["x",EAST],AXIS["y",NORTH]]';
+UPDATE information_schema.SPATIAL_REF_SYS SET SRID = 0, AUTH_NAME = 'EPSG', AUTH_SRID = 404000, SRTEXT = 'LOCAL_CS["Wildcard 2D cartesian plane in metric unit",LOCAL_DATUM["Unknown",0],UNIT["m",1.0],AXIS["x",EAST],AXIS["y",NORTH],AUTHORITY["EPSG","404000"]]';

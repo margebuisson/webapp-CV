@@ -1,0 +1,2 @@
+UPDATE information_schema.INNODB_MUTEXES SET NAME = '', CREATE_FILE = 'dict0dict.cc', CREATE_LINE = 835, OS_WAITS = 15;
+UPDATE information_schema.INNODB_MUTEXES SET NAME = '', CREATE_FILE = 'log0log.cc', CREATE_LINE = 578, OS_WAITS = 9;

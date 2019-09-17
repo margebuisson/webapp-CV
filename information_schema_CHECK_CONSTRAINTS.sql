@@ -1,0 +1,1 @@
+UPDATE information_schema.CHECK_CONSTRAINTS SET CONSTRAINT_CATALOG = 'def', CONSTRAINT_SCHEMA = 'mysql', CONSTRAINT_NAME = 'Priv', TABLE_NAME = 'global_priv', CHECK_CLAUSE = 'json_valid(`Priv`)';

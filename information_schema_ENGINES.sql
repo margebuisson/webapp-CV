@@ -1,0 +1,8 @@
+UPDATE information_schema.ENGINES SET ENGINE = 'CSV', SUPPORT = 'YES', COMMENT = 'Stores tables as CSV files', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';
+UPDATE information_schema.ENGINES SET ENGINE = 'MRG_MyISAM', SUPPORT = 'YES', COMMENT = 'Collection of identical MyISAM tables', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';
+UPDATE information_schema.ENGINES SET ENGINE = 'MEMORY', SUPPORT = 'YES', COMMENT = 'Hash based, stored in memory, useful for temporary tables', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';
+UPDATE information_schema.ENGINES SET ENGINE = 'Aria', SUPPORT = 'YES', COMMENT = 'Crash-safe tables with MyISAM heritage. Used for internal temporary tables and privilege tables', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';
+UPDATE information_schema.ENGINES SET ENGINE = 'MyISAM', SUPPORT = 'YES', COMMENT = 'Non-transactional engine with good performance and small data footprint', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';
+UPDATE information_schema.ENGINES SET ENGINE = 'SEQUENCE', SUPPORT = 'YES', COMMENT = 'Generated tables filled with sequential values', TRANSACTIONS = 'YES', XA = 'NO', SAVEPOINTS = 'YES';
+UPDATE information_schema.ENGINES SET ENGINE = 'InnoDB', SUPPORT = 'DEFAULT', COMMENT = 'Supports transactions, row-level locking, foreign keys and encryption for tables', TRANSACTIONS = 'YES', XA = 'YES', SAVEPOINTS = 'YES';
+UPDATE information_schema.ENGINES SET ENGINE = 'PERFORMANCE_SCHEMA', SUPPORT = 'YES', COMMENT = 'Performance Schema', TRANSACTIONS = 'NO', XA = 'NO', SAVEPOINTS = 'NO';

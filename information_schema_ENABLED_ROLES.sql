@@ -1,0 +1,1 @@
+UPDATE information_schema.ENABLED_ROLES SET ROLE_NAME = null;
