@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                 <label for="avatar">Choose a profile picture:</label>
-                <input type="file" th:field="*{profilePicture}"
+                <input type="file" th:src="../static/images/*{profilePicture}"
                        id="avatar" name="avatar"
                        accept="image/png, image/jpeg">
                 </div>
@@ -29,45 +29,45 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="firstNameInput">First Name</label>
-                <input type="text" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Enter first name">
+                <input type="text" th:value="firstname" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Enter first name">
                 <small id="firstNameHelp" class="form-text text-muted">Having a first name is always more convenient.</small>
             </div>
             <div class="form-group col-md-6">
                 <label for="lastNameInput">Last Name</label>
-                <input type="text" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Enter last name">
+                <input type="text" th:value="lastname" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Enter last name">
                 <small id="lastNameHelp" class="form-text text-muted">Having a last name is always more convenient.</small>
             </div>
         </div>
         <div class="form-group col-md-6">
             <label for="birthDate">Birth Date</label>
-            <input type="date" th:field="*{birthDate}" class="form-control" id="birthDate">
+            <input type="date" th:value="birthdate" th:field="*{birthDate}" class="form-control" id="birthDate">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" th:value="mail" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputTelephone4">telephone</label>
-                <input type="telephone" th:field="*{telePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
+                <input type="telephone" th:value="telephone" th:field="*{telePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
             </div>
         </div>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" th:field="*{city}" class="form-control" id="inputCity">
+                <input type="text" th:value="city" th:field="*{city}" class="form-control" id="inputCity">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">State</label>
-                <input type="text" th:field="*{state}" class="form-control" id="inputState">
+                <input type="text" th:value="state" th:field="*{state}" class="form-control" id="inputState">
             </div>
             <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
-                <input type="text" th:field="*{zip}" class="form-control" id="inputZip">
+                <input type="text" th:value="zip" th:field="*{zip}" class="form-control" id="inputZip">
             </div>
         </div>
 
