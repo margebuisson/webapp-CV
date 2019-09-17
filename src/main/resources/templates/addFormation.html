@@ -23,7 +23,13 @@
 
     <h1 class = "text-center"> Fill in your professional training : </h1>
 
-<div class="container">
+    <div class="cadrePage">
+        <div class="buttonAdd">
+            <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+        </div>
+    </div>
+
+<div class="cadrePage" id="formulaire">
     <form method="post" th:action="@{/addFormation}" th:object="${formation}">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -63,7 +69,10 @@
             <textarea th:value="trainingdescription" th:field="*{trainingDescription}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
-        <a onclick="myFunction()" type="submit" class="btn btn-primary">Add</a>
+        <div class="button">
+        <a onclick="myFunction()" type="submit" class="btn btn-primary">Save</a>
+        </div>
+
         <div id="snackbar">The formation has been added</div>
 
     </form>
@@ -71,6 +80,6 @@
 
 </body>
 
-<script src="./test.js"></script>
-
+<script src="./script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </html>

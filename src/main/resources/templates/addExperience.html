@@ -24,9 +24,14 @@
 
 <h1 class="text-center"> Please complete you professional experiences : </h1>
 
-<div class="container">
+<div class="cadrePage">
+    <div class="buttonAdd">
+        <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+    </div>
+</div>
+
+<div class="container" id="formulaire">
     <!--/*@thymesVar id="experience" type="var"*/-->
-    <div class="row">
         <form method="post" th:object="${experience}">
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -73,14 +78,18 @@
                         <input type="int" th:field="*{endYear}" class="form-control" id="endYearInput">
                         <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
                     </div>
-                    >
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
         </form>
+
+    <div class="button">
+    <a onclick="myFunction()" type="submit" class="btn btn-primary">Save</a>
     </div>
-    <div class="row">
-        <button type="submit" class="btn btn-primary">Add an experience</button>
-    </div>
+
+    <div id="snackbar">The professional experience has been added</div>
+
 </div>
 </body>
+
+<script src="./script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 </html>

@@ -49,18 +49,28 @@
     margin-top: 20px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 50px;
 }
 
 .button {
-    float: right;
     margin : 20px;
 }
 
-.navbarSiteWeb{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 500px;
+.buttonAdd {
+    position: fixed;
+    margin-left: 60%;
 }
+
+
+.navbarSiteWeb{
+    position: fixed;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 700px;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
 
 /* toast */
 
