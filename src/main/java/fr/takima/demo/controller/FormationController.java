@@ -21,7 +21,7 @@ public class FormationController {
 
     @GetMapping("/addFormation")
     public String addFormation(Model m) {
-        m.addAttribute("formation", formationDAO.findAll());
+        m.addAttribute("formation", new Formation());
         return "addFormation";
     }
 

@@ -18,8 +18,8 @@ data class User(
         @Column(name = "mail") var mail: String?,
         @Column(name = "mobile_phone") var mobilePhone: Int?,
         @Column(name = "profil_picture") var profilPicture: String?,
-        @Column(name = "birthdate") var birthdate: String?) {
+        @Column(name = "birthdate") var birthdate: String?,
+        @OneToMany(mappedBy="user") var formations: MutableList<Formation>?){
     constructor() : this(null, null, null, null, null,null, null,
-            null, null, null)
-
+            null, null, null, null)
 }
