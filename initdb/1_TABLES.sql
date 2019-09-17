@@ -22,7 +22,7 @@ create table formations
         primary key,
     formation_name text       null,
     description   text       null,
-    level          linestring null comment 'Mettre une liste BAC +1,2,3...',
+    level         text null comment 'Mettre une liste BAC +1,2,3...',
     city           text       null,
     beg_year       date       null,
     end_year       date       null,

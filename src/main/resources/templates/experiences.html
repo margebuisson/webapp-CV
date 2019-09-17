@@ -4,62 +4,72 @@
 
 <head>
     <title>Experiences form</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-<h1 class = "text-center"> Please complete you professional experiences : </h1>
+<h1 class="text-center"> Please complete you professional experiences : </h1>
 
 <div class="container">
-    <form method="post" th:action="@{/experiences}" th:object="${experience}">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="jobTitleInput">Job title</label>
-                <input type="text" th:field="*{experience.jobTitle}" class="form-control" id="jobTitleInput" aria-describedby="firstNameHelp" placeholder="Enter job name">
+    <!--/*@thymesVar id="experience" type="var"*/-->
+    <div class="row">
+        <form method="post" th:object="${experience}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="jobTitleInput">Job title</label>
+                    <input type="text" th:field="*{experience.jobTitle}" class="form-control" id="jobTitleInput"
+                           aria-describedby="firstNameHelp" placeholder="Enter job name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="companyInput">Company</label>
+                    <input type="text" th:field="*{company}" class="form-control" id="companyInput"
+                           aria-describedby="lastNameHelp" placeholder="Enter company name">
+                </div>
             </div>
             <div class="form-group col-md-6">
-                <label for="companyInput">Company</label>
-                <input type="text" th:field="*{company}" class="form-control" id="companyInput" aria-describedby="lastNameHelp" placeholder="Enter company name">
+                <label for="contractTypeInput">Contract type</label>
+                <select name="contractType" size="1" th:field="*{contractType}" id="contractTypeInput">
+                    <option>CDD
+                    <option>CDI
+                    <option>Stage
+                </select>
             </div>
-        </div>
-        <div class="form-group col-md-6">
-            <input type="date" th:field="*{contractType} "id="contract">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputTelephone4">telephone</label>
-                <input type="telephone" th:field="*{telePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" th:field="*{city}" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <input type="text" th:field="*{state}" class="form-control" id="inputState">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" th:field="*{zip}" class="form-control" id="inputZip">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="jobDescriptionInput">Job Description</label>
+                    <textarea type="text" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
+                              rows="3" placeholder="job Description"></textarea>
+                </div>
 
-    </form>
+            </div>
+            <div class="form row">
+                <label for="begYearInput" class="col-sm-4 col-form-label">Beginning year</label>
+                <div class="col-sm-8">
+                    <input type="int" th:field="*{begYear}" class="form-control" id="begYearInput"
+                           placeholder="Beginning year">
+                </div>
+                <div/>
+                <div class="form-row">
+                    <label class="form-check-label" for="exampleCheck1">Job ended</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </div>
+                <div class="form-row">
+                    <label for="endYearInput" class="col-sm-4 col-form-label">End year</label>
+                    <div class="col-sm-8">
+                        <input type="int" th:field="*{endYear}" class="form-control" id="endYearInput">
+                        <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
+                    </div>
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-primary">Add an experience</button>
+    </div>
 </div>
-
 </body>
-
 </html>
