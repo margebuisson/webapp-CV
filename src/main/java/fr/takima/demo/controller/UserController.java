@@ -34,17 +34,11 @@ public class UserController {
     return "createAccount";
   }
 
-
   @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
     attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
     userDAO.save(user);
     return new RedirectView("/addFormation");
   }
-
-  /*@PostMapping("/")
-  public RedirectView signIn(@ModelAttribute User user, RedirectAttributes attrs) {
-    return new RedirectView("/createAccount");
-  }*/
 
 }
