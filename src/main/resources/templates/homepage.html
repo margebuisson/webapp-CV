@@ -13,7 +13,12 @@
 
 <h1 class = "titreh1"> Welcome to your CV creator ! </h1>
 
-<div class="cadrePage">
+<div class="cadrePageAcceuil">
+
+    <div class="button">
+    <label for="createAccountButton"> New on this website ? </label>
+    <a href="./createAccount" class="btn btn-primary" id="createAccountButton">Sign in</a>
+    </div>
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -27,21 +32,14 @@
         <tr th:each="user : ${users}">
             <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
-            <td>
+            <td width=25px>
                 <button type=submit name=action>
-                    <img alt="" src="../static/images/modifier-png-6.png" height="50" width="50">
+                    <img alt="" src="../static/images/modifier-png-6.png" height="25" width="25">
                 </button>
             </td>
         </tr>
         </tbody>
     </table>
-
-    <div class="float-right">
-            <label for="createAccountButton"> New on this website ? Just sign in ! </label>
-            <div class="btn-group float-right m-3">
-                <a href="./createAccount" class="btn btn-primary" id="createAccountButton">Create an account</a>
-            </div>
-    </div>
 
 </body>
 

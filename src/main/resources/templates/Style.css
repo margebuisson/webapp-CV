@@ -39,8 +39,19 @@
     margin-top: 20px;
 }
 
+.cadrePageAcceuil{
+    margin-top: 20px;
+    margin-right: 500px;
+    margin-left: 500px;
+}
+
 .cadrePage {
     margin-top: 20px;
     margin-left: 250px;
     margin-right: 250px;
+}
+
+.button {
+    float: right;
+    margin : 20px;
 }
