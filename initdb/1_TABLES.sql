@@ -12,7 +12,7 @@ create table users
     city        text       null,
     zip_code    int        null,
     mail        text       null,
-    mobile_phone int null,
+    mobile_phone int       null,
     profil_picture     text       null,
     birthdate   text       null
 );

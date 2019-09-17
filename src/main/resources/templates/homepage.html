@@ -28,9 +28,9 @@
             <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td>
-                <button type=submit name=action>
-                    <img alt="" src="../static/images/modifier-png-6.png" height="50" width="50">
-                </button>
+                <div class="btn-group float-right m-3">
+                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn btn-primary">Créer un compte</a>
+                </div>
             </td>
         </tr>
         </tbody>
@@ -42,7 +42,7 @@
 
 <div class="container">
     <div class="btn-group float-right m-3">
-        <a href="./createAccount" class="btn btn-primary">Créer un compte</a>
+        <a href="/createAccount" class="btn btn-primary">Créer un compte</a>
     </div>
 </div>
 </body>
