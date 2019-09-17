@@ -8,6 +8,8 @@
     margin-right: 20px;
 }
 
+/* exemple cours web design */
+
 .monbloc {
     width:700px;
     height:auto;
@@ -73,6 +75,8 @@
 
 
 /* toast */
+
+/* source : https://www.w3schools.com/howto/howto_js_snackbar.asp */
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
