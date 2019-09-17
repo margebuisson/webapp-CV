@@ -6,13 +6,14 @@
     <title>Home Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style.css" rel="stylesheet">
 </head>
 
 <body>
 
 <h1 class = "text-center"> Welcome to your CV creator ! </h1>
 
-<div class="container">
+<div class="cadrePage">
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -28,7 +29,7 @@
             <td th:text="${user.lastName}"></td>
             <td>
                 <button type=submit class="rounded">
-                    <img src="/images/modifier-png-6.png" height="50" width="50">
+                    <img src="../static/images/modifier-png-6.png" height="50" width="50">
                 </button>
             </td>
         </tr>
