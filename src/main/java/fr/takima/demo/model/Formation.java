@@ -33,9 +33,6 @@ public class Formation{
     public Formation() {
     }
 
-    public Formation() {
-
-    }
 
     public long getId() {
         return id;
