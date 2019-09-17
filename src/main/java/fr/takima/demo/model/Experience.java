@@ -7,15 +7,17 @@ import java.util.Objects;
 public class Experience {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-
+    @Id private long id;
     @Column(name = "job_title")private String jobTitle;
     @Column(name = "company")private String company;
     @Column(name = "contract_type")private String contractType;
     @Column(name = "job_description")private String jobDescription;
-    @Column(name = "beg_year")private Integer begYear;
-    @Column(name = "end_year")private Integer endYear;
+    @Column(name = "beg_year")private int begYear;
+    @Column(name = "end_year")private int endYear;
     @Column(name = "ended")private boolean ended;
+
+    public Experience() {
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -34,6 +36,10 @@ public class Experience {
     @Override
     public int hashCode() {
         return Objects.hash(getJobTitle(), getCompany(), getContractType(), getJobDescription(), getBegYear(), getEndYear(), isEnded());
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getJobTitle() {
