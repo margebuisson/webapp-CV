@@ -6,6 +6,7 @@
     <title>Professional Training</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
@@ -53,17 +54,7 @@
             <textarea th:value="trainingdescription" th:field="*{trainingDescription}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
-        <div class="container">
-            <div class="btn-group float-right m-3">
-                <a href="./addFormation" class="btn btn-primary">Ajouter une autre formation</a>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="btn-group float-right m-3">
-                <a href="./addExperience" class="btn btn-primary">Passer aux expériences professionnelles</a>
-            </div>
-        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
 
     </form>
 </div>
