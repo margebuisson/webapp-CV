@@ -11,6 +11,16 @@
 
 <body>
 
+<nav class="navbarSiteWeb navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <form class="form-inline">
+        <a href="./homepage.html" class="btn btn-outline-success" id="goHomePage">Home</a>
+        <a href="./createAccount.html" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Personnal Info</a>
+        <a href="./addFormation.html" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Formation Info</a>
+        <a href="./addExperience.html" class="btn btn-sm btn-outline-secondary" id="goProInfo">Professionnal Info</a>
+    </form>
+</nav>
+
     <h1 class = "text-center"> Fill in your professional training : </h1>
 
 <div class="container">
@@ -26,11 +36,11 @@
             </div>
         </div>
         <div class="form-row">
-            <div>
+            <div class="form-group col-md-2">
                 <label for="trainingStartDate">Start Date</label>
                 <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
-            <div id="trainingEndDateDiv">
+            <div class="form-group col-md-2">
                 <label for="trainingEndDate">End Date</label>
                 <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
@@ -38,7 +48,6 @@
         <div>
             <label for="trainingLevel">Training Level</label>
             <select th:value="traininglevel" th:field="*{trainingLevel}" class="custom-select mr-sm-2" id="trainingLevel">
-                <option selected>Choose...</option>
                 <option value="1">BAC +1</option>
                 <option value="2">BAC +2</option>
                 <option value="3">BAC +3</option>
@@ -55,10 +64,14 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Add</button>
+        <button onclick="myFunction()">Show Snackbar</button>
+        <div id="snackbar">Some text some message..</div>
 
     </form>
 </div>
 
 </body>
+
+<script src="./test.js"></script>
 
 </html>

@@ -11,6 +11,16 @@
 
 <body>
 
+<nav class="navbarSiteWeb navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <form class="form-inline">
+        <a href="./homepage.html" class="btn btn-outline-success" id="goHomePage">Home</a>
+        <a href="./createAccount.html" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Personnal Info</a>
+        <a href="./addFormation.html" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Formation Info</a>
+        <a href="./addExperience.html" class="btn btn-sm btn-outline-secondary" id="goProInfo">Professionnal Info</a>
+    </form>
+</nav>
+
 <h1 class = "titreh1"> Please fill in your personnal information : </h1>
 
 <div class="container">
@@ -26,6 +36,20 @@
                        accept="image/png, image/jpeg">
                 </div>
         </center>
+
+            <!-- <form action="my-script.php" enctype="multipart/form-data" method="post">
+                <div>
+                    <label for="avatar">Choose a profile picture:</label>
+                    <input type="file" th:field="*{profilePicture}" onchange="handleFiles(files)" id="Avatar" name="file" accept="image/png, image/jpeg">
+                </div>
+                <div>
+                    <label for="Avatar">
+                        <span id="preview" width="200" height="200"></span>
+                    </label>
+                </div>
+                <div><input type="submit" value="Envoyer"></div>
+            </form> -->
+
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="firstNameInput">First Name</label>
@@ -82,6 +106,31 @@
     </form>
 
 </div>
+
+<!-- <script>
+    function handleFiles(files) {
+        var imageType = /^image\//;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+
+                if(i == 0){
+                    preview.innerHTML = '';
+                }
+                var img = document.createElement("img");
+                img.classList.add("obj");
+                img.file = file;
+                preview.appendChild(img);
+                var reader = new FileReader();
+                reader.onload = ( function(aImg) {
+                    return function(e) {
+                        aImg.src = e.target.result;
+                    };
+                })(img);
+
+                reader.readAsDataURL(file);
+        }
+    }
+</script> -->
 
 </body>
 
