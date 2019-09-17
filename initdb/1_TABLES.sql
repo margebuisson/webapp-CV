@@ -7,7 +7,7 @@ create table experiences
     experience_id  int auto_increment
         primary key,
     job_title       text       null,
-    company        text       null,
+    company         text       null,
     contract_type   text       null,
     job_description text       null,
     beg_year        int        null,
@@ -21,8 +21,8 @@ create table formations
     formation_id   int auto_increment
         primary key,
     formation_name text       null,
-    description   text       null,
-    level         text null comment 'Mettre une liste BAC +1,2,3...',
+    description    text       null,
+    level          text null comment 'Mettre une liste BAC +1,2,3...',
     city           text       null,
     beg_year       date       null,
     end_year       date       null,
@@ -35,8 +35,8 @@ create table users
 (
     id          bigint auto_increment
         primary key,
-    first_name  text       not null,
-    last_name   text       not null,
+    first_name  text       null,
+    last_name   text       null,
     address     text       null,
     city        text       null,
     zip_code    int        null,
