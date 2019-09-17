@@ -1,0 +1,40 @@
+.infosPerso {
+    margin-right: 5px;
+    margin-bottom: 0px;
+}
+
+#box_flottante {
+    float:left;
+    margin-right: 20px;
+}
+
+.monbloc {
+    width:700px;
+    height:auto;
+    /*background-color:yellow;*/
+    padding: 0px 0px 0px 5px;		/* créé de l'espace dans le contenu du bloc pour en faire réspirer le contenu. */
+                                    /*lire les valeurs dans le sens horaire: haut droit bas gauche */
+    /*border-top: 5px solid blue;*/		/* on ne se sert pas du raccourci avec les 4 valeurs car on */
+    /*border-bottom: 4px dotted hotpink;*/	/* précise un type de bordure en plus de la couleur */
+    border-left: 1px solid black;
+    margin: auto; 				/* marge de chaque côté exterieur du bloc, */
+    /*margin-top: 0px;*/			/* margin: auto permet de centrer horizontalement */
+    /*margin-bottom:0px;*/
+    /*outline: 2px solid red;*/
+    /*outline-offset: 5px;*/
+}
+
+.titreCV {
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+.photoProfil {
+    margin-top: 20px;
+}
+
+.cadrePage {
+    margin-top: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+}

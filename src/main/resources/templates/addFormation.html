@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Formulaire formation</title>
+    <title>Professional Training</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -17,26 +17,26 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="trainingNameInput">Training Name</label>
-                <input type="text" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="Enter first name">
+                <input type="text" th:value="trainingname" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="Enter first name">
             </div>
             <div class="form-group col-md-6">
                 <label for="trainingLocationInput">Training Location</label>
-                <input type="text" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Enter last name">
+                <input type="text" th:value="traininglocation" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Enter last name">
             </div>
         </div>
         <div class="form-row">
             <div>
                 <label for="trainingStartDate">Start Date</label>
-                <input type="date" th:field="*{begYear}" class="form-control" id="trainingStartDate">
+                <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
             <div id="trainingEndDateDiv">
                 <label for="trainingEndDate">End Date</label>
-                <input type="date" th:field="*{endYear}" class="form-control" id="trainingEndDate">
+                <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
         </div>
         <div>
             <label for="trainingLevel">Training Level</label>
-            <select class="custom-select mr-sm-2" id="trainingLevel">
+            <select th:value="traininglevel" th:field="*{trainingLevel}" class="custom-select mr-sm-2" id="trainingLevel">
                 <option selected>Choose...</option>
                 <option value="1">BAC +1</option>
                 <option value="2">BAC +2</option>
@@ -48,9 +48,9 @@
                 <option value="8">BAC +8</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="overflow-auto">
             <label for="trainingDescription">Training Description</label>
-            <textarea class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
+            <textarea th:value="trainingdescription" th:field="*{trainingDescription}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
         <div class="container">
