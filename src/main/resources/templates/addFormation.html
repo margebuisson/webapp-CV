@@ -13,25 +13,25 @@
     <h1 class = "text-center"> Fill in your professional training : </h1>
 
 <div class="container">
-    <form method="post" th:action="@{/formulaire2}" th:object="${formation}">
+    <form method="post" th:action="@{/addFormation}" th:object="${formation}">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="trainingNameInput">Training Name</label>
-                <input type="text" th:field="*{trainingName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="Enter first name">
+                <input type="text" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="Enter first name">
             </div>
             <div class="form-group col-md-6">
                 <label for="trainingLocationInput">Training Location</label>
-                <input type="text" th:field="*{trainingLocation}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Enter last name">
+                <input type="text" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Enter last name">
             </div>
         </div>
         <div class="form-row">
             <div>
                 <label for="trainingStartDate">Start Date</label>
-                <input type="date" th:field="*{trainingStartDate}" class="form-control" id="trainingStartDate">
+                <input type="date" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
             <div id="trainingEndDateDiv">
                 <label for="trainingEndDate">End Date</label>
-                <input type="date" th:field="*{trainingEndDate}" class="form-control" id="trainingEndDate">
+                <input type="date" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
         </div>
         <div>
@@ -53,7 +53,17 @@
             <textarea class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add</button>
+        <div class="container">
+            <div class="btn-group float-right m-3">
+                <a href="./addFormation" class="btn btn-primary">Ajouter une autre formation</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="btn-group float-right m-3">
+                <a href="./addExperience" class="btn btn-primary">Passer aux expériences professionnelles</a>
+            </div>
+        </div>
 
     </form>
 </div>

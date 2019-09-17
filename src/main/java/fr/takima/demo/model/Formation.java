@@ -14,15 +14,19 @@ public class Formation{
     @Column(name = "end_Year") private int endYear;
     @Column(name = "diploma_Year") private String diplomaName;
     @Column(name = "city") private String city;
-    @Column(name = "subject") private String subject;
+    @Column(name = "description") private String description;
+    @Column(name = "level") private String level;
+    @Column(name = "ended") private boolean ended;
 
-    public Formation(String formationName, int begYear, int endYear, String diplomaName, String city, String subject) {
-        this.formationName = formationName;
+
+    public Formation(int begYear, int endYear, String diplomaName, String city, String description, String level, boolean ended) {
         this.begYear = begYear;
         this.endYear = endYear;
         this.diplomaName = diplomaName;
         this.city = city;
-        this.subject = subject;
+        this.description = description;
+        this.level = level;
+        this.ended = ended;
     }
 
     public String getFormationName() {
@@ -65,11 +69,27 @@ public class Formation{
         this.city = city;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public boolean isEnded() {
+        return ended;
+    }
+
+    public void setEnded(boolean ended) {
+        this.ended = ended;
     }
 }
