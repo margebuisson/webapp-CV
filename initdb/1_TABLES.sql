@@ -1,3 +1,7 @@
+drop table users;
+drop table formations;
+drop table experiences;
+
 create table users
 (
     id          bigint auto_increment
