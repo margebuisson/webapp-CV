@@ -6,7 +6,7 @@
     <title>Formulaire infos perso</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <form method="post" th:action="@{/createAccount}" th:object="${user}">
         <center>
                 <div class="form-group">
-                    <img src="/images/personne.png" height="200" width="200">
+                    <img src="/static/images/personne.png" height="200" width="200">
                 </div>
                 <div class="form-group">
                 <label for="avatar">Choose a profile picture:</label>
