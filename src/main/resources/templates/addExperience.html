@@ -32,31 +32,32 @@
 
 <div class="container" id="formulaire">
     <!--/*@thymesVar id="experience" type="var"*/-->
-        <form method="post" th:object="${experience}">
+        <form method="post" th:action="@{/addExperience}" th:object="${experience}">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="jobTitleInput">Job title</label>
-                    <input type="text" th:field="*{jobTitle}" class="form-control" id="jobTitleInput"
+                    <input type="text" th:value="jobTitle" th:field="*{jobTitle}" class="form-control" id="jobTitleInput"
+
                            aria-describedby="firstNameHelp" placeholder="Enter job name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="companyInput">Company</label>
-                    <input type="text" th:field="*{company}" class="form-control" id="companyInput"
+                    <input type="text" th:value="company" th:field="*{company}" class="form-control" id="companyInput"
                            aria-describedby="lastNameHelp" placeholder="Enter company name">
                 </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="contractTypeInput">Contract type</label>
-                <select name="contractType" size="1" th:field="*{contractType}" id="contractTypeInput">
-                    <option>CDD
-                    <option>CDI
-                    <option>Stage
+                <select name="contractType" size="1" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
+                    <option value="0">CDD
+                    <option value="1">CDI
+                    <option value="2">Stage
                 </select>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="jobDescriptionInput">Job Description</label>
-                    <textarea type="text" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
+                    <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
                               rows="3" placeholder="job Description"></textarea>
                 </div>
 
@@ -64,18 +65,18 @@
             <div class="form row">
                 <label for="begYearInput" class="col-sm-4 col-form-label">Beginning year</label>
                 <div class="col-sm-8">
-                    <input type="int" th:field="*{begYear}" class="form-control" id="begYearInput"
+                    <input type="int" th:value="begYear" th:field="*{begYear}" class="form-control" id="begYearInput"
                            placeholder="Beginning year">
                 </div>
                 <div/>
                 <div class="form-row">
                     <label class="form-check-label" for="exampleCheck1">Job ended</label>
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" th:value="ended" th:field="*{ended}" class="form-check-input" id="exampleCheck1">
                 </div>
                 <div class="form-row">
                     <label for="endYearInput" class="col-sm-4 col-form-label">End year</label>
                     <div class="col-sm-8">
-                        <input type="int" th:field="*{endYear}" class="form-control" id="endYearInput">
+                        <input type="int" th:value="endYear" th:field="*{endYear}" class="form-control" id="endYearInput">
                         <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
                     </div>
         </form>
@@ -87,6 +88,7 @@
     <div id="snackbar">The professional experience has been added</div>
 
 </div>
+
 </body>
 
 <script src="./script.js"></script>

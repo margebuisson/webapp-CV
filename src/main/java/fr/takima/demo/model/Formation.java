@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Formation{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+    @Id private long id;
 
     @Column(name = "formation_name") private String formationName;
     @Column(name = "beg_year") private int begYear;
@@ -16,6 +16,9 @@ public class Formation{
     @Column(name = "description") private String description;
     @Column(name = "level") private String level;
     @Column(name = "ended") private boolean ended;
+    @ManyToOne
+            @JoinColumn(name="user_id") private User user;
+
 
     public Formation(String formationName, int begYear, int endYear, String city, String description, String level, boolean ended) {
         this.begYear = begYear;
@@ -28,6 +31,15 @@ public class Formation{
     }
 
     public Formation() {
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getFormationName() {

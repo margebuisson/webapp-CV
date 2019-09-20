@@ -39,14 +39,23 @@
         <tr th:each="user : ${users}">
             <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
-            <td width=25px>
-                <button type=submit name=action>
-                    <img alt="" src="../static/images/modifier-png-6.png" height="25" width="25">
-                </button>
+            <td>
+                <div class="btn-group float-right m-3">
+                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn btn-primary">Modifier un compte</a>
+                </div>
             </td>
         </tr>
         </tbody>
     </table>
+
+</div>
+
+<h2 class="text-center"> New on this website ? Just sign in ! </h2>
+
+<div class="container">
+    <div class="btn-group float-right m-3">
+        <a href="/createAccount" class="btn btn-primary">Créer un compte</a>
+    </div>
 </div>
 </body>
 
