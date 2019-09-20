@@ -63,12 +63,15 @@
     margin-left: 60%;
 }
 
+.buttonhome {
+    margin-right: 5px;
+}
 
 .navbarSiteWeb{
     position: fixed;
     width: 100%;
     padding-top: 10px;
-    padding-left: 700px;
+    padding-left: 30%;
     padding-bottom: 10px;
     z-index: 100;
 }
