@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -34,6 +35,11 @@ public class UserController {
     return "createAccount";
   }
 
+  @GetMapping("/editAccount/{id}")
+  public String addUserPage(Model m, @PathVariable long id) {
+    m.addAttribute("user", userDAO.findById(id).get());
+    return "createAccount";
+  }
 
   @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
@@ -41,10 +47,5 @@ public class UserController {
     userDAO.save(user);
     return new RedirectView("/addFormation");
   }
-
-  /*@PostMapping("/")
-  public RedirectView signIn(@ModelAttribute User user, RedirectAttributes attrs) {
-    return new RedirectView("/createAccount");
-  }*/
 
 }

@@ -19,19 +19,20 @@ public class Formation{
     @ManyToOne
             @JoinColumn(name="user_id") private User user;
 
-    public Formation(int begYear, int endYear,  String city, String description, String level, boolean ended) {
+
+    public Formation(String formationName, int begYear, int endYear, String city, String description, String level, boolean ended) {
         this.begYear = begYear;
         this.endYear = endYear;
-
         this.city = city;
         this.description = description;
         this.level = level;
         this.ended = ended;
+        this.formationName = formationName;
     }
 
     public Formation() {
-
     }
+
 
     public long getId() {
         return id;
