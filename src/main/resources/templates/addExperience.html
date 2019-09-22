@@ -15,18 +15,18 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Home</a>
-        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Personnal Info</a>
-        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Formation Info</a>
-        <a href="./addExperience" class="btn btn-outline-success" id="goProInfo">Professionnal Info</a>
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations personnelles</a>
+        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-outline-success" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
-<h1 class="text-center"> Please complete you professional experiences : </h1>
+    <h1 class="titreh1"> Renseignez votre parcour professionnel</h1>
 
 <div class="cadrePage">
     <div class="buttonAdd">
-        <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+        <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Ajouter une experience professionnelle</a>
     </div>
 </div>
 
@@ -35,19 +35,19 @@
         <form method="post" th:action="@{/addExperience}" th:object="${experience}">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="jobTitleInput">Job title</label>
+                    <label for="jobTitleInput">Poste</label>
                     <input type="text" th:value="jobTitle" th:field="*{jobTitle}" class="form-control" id="jobTitleInput"
 
-                           aria-describedby="firstNameHelp" placeholder="Enter job name">
+                           aria-describedby="firstNameHelp" placeholder="Entrez votre poste">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="companyInput">Company</label>
+                    <label for="companyInput">Entreprise</label>
                     <input type="text" th:value="company" th:field="*{company}" class="form-control" id="companyInput"
-                           aria-describedby="lastNameHelp" placeholder="Enter company name">
+                           aria-describedby="lastNameHelp" placeholder="Entrez le nom de l'entreprise">
                 </div>
             </div>
             <div class="form-group col-md-6">
-                <label for="contractTypeInput">Contract type</label>
+                <label for="contractTypeInput">Type de contrat</label>
                 <select name="contractType" size="1" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
                     <option value="0">CDD
                     <option value="1">CDI
@@ -56,25 +56,25 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="jobDescriptionInput">Job Description</label>
+                    <label for="jobDescriptionInput">Description</label>
                     <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
-                              rows="3" placeholder="job Description"></textarea>
+                              rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
                 </div>
 
             </div>
             <div class="form row">
-                <label for="begYearInput" class="col-sm-4 col-form-label">Beginning year</label>
-                <div class="col-sm-8">
-                    <input type="int" th:value="begYear" th:field="*{begYear}" class="form-control" id="begYearInput"
-                           placeholder="Beginning year">
+                <div class="form-group col-md-2">
+                    <label for="begYearInput">Début</label>
+                    <input type="int" th:value="begYear" th:field="*{begYear}" class="form-control" id="begYearInput">
                 </div>
-                <div/>
-                <div class="form-row">
-                    <label class="form-check-label" for="exampleCheck1">Job ended</label>
+
+                <div class="form-inline col-md-2">
+                    <label for="exampleCheck1">Cochez s'il s'agit de votre poste actuel</label>
                     <input type="checkbox" th:value="ended" th:field="*{ended}" class="form-check-input" id="exampleCheck1">
                 </div>
-                <div class="form-row">
-                    <label for="endYearInput" class="col-sm-4 col-form-label">End year</label>
+
+                <div class="form-group col-md-2">
+                    <label for="endYearInput">Fin</label>
                     <div class="col-sm-8">
                         <input type="int" th:value="endYear" th:field="*{endYear}" class="form-control" id="endYearInput">
                         <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
@@ -83,12 +83,18 @@
             </div>
         </form>
 
-    <div class="button">
-    <a href="./viewCV" onclick="myFunction()" type="submit" class="btn btn-primary">Save and see your CV</a>
+    <div class="buttonFloat">
+        <a onclick="myFunction()" class="btn btn-danger">Supprimer</a>
     </div>
 
-    <div id="snackbar">The professional experience has been added</div>
+    <div id="snackbar">Ce poste a bien été supprimé</div>
 
+</div>
+
+<div class="cadrePage">
+<div class="buttonAdd">
+    <a href="./viewCV" onclick="myFunction()" type="submit" class="btn btn-primary float-right">Enregistrer les informations et accéder à votre CV</a>
+</div>
 </div>
 
 </body>

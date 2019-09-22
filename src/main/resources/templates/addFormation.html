@@ -14,18 +14,18 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Home</a>
-        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Personnal Info</a>
-        <a href="./addFormation" class="btn btn-outline-success" id="goFormationInfo">Formation Info</a>
-        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Professionnal Info</a>
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a href="./addFormation" class="btn btn-outline-success" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
-    <h1 class = "text-center"> Fill in your professional training : </h1>
+    <h1 class = "text-center"> Renseigner vos études </h1>
 
     <div class="cadrePage">
         <div class="buttonAdd">
-            <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+            <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Ajouter une formation</a>
         </div>
     </div>
 
@@ -33,26 +33,26 @@
     <form method="post" th:action="@{/addFormation}" th:object="${formation}">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="trainingNameInput">Training Name</label>
-                <input type="text" th:value="trainingname" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="Enter first name">
+                <label for="trainingNameInput">Nom de l'école/organisation</label>
+                <input type="text" th:value="trainingname" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="EPF">
             </div>
             <div class="form-group col-md-6">
-                <label for="trainingLocationInput">Training Location</label>
-                <input type="text" th:value="traininglocation" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Enter last name">
+                <label for="trainingLocationInput">Lieu</label>
+                <input type="text" th:value="traininglocation" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Sceaux">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-2">
-                <label for="trainingStartDate">Start Date</label>
+                <label for="trainingStartDate">Début</label>
                 <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
             <div class="form-group col-md-2">
-                <label for="trainingEndDate">End Date</label>
+                <label for="trainingEndDate">Fin</label>
                 <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
         </div>
         <div>
-            <label for="trainingLevel">Training Level</label>
+            <label for="trainingLevel">Niveau du diplôme</label>
 
             <select th:value="traininglevel" th:field="*{level}" class="custom-select mr-sm-2" id="trainingLevel">
                 <option value="1">BAC +1</option>
@@ -66,17 +66,22 @@
             </select>
         </div>
         <div class="overflow-auto">
-            <label for="trainingDescription">Training Description</label>
-            <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
+            <label for="trainingDescription">Description</label>
+            <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
         </div>
 
-        <div class="button">
-        <a href="./addExperience" onclick="myFunction()" type="submit" class="btn btn-primary">Save</a>
+        <div class="buttonFloat">
+            <a onclick="myFunction()" class="btn btn-danger">Supprimer</a>
         </div>
 
-        <div id="snackbar">The formation has been added</div>
+        <div id="snackbar">La formation a bien été supprimé</div>
 
     </form>
+</div>
+<div class="cadrePage">
+<div class="buttonAdd">
+    <a href="./addExperience" type="submit" class="btn btn-primary float-right">Enregistrer ces études</a>
+</div>
 </div>
 
 </body>
