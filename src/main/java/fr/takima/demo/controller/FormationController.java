@@ -1,8 +1,10 @@
 package fr.takima.demo.controller;
 
 import fr.takima.demo.dao.FormationDAO;
+import fr.takima.demo.dao.UserDAO;
 import fr.takima.demo.model.Formation;
 import fr.takima.demo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +16,23 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class FormationController {
-
+    @Autowired
     private final FormationDAO formationDAO;
+    private final UserDAO userDAO;
 
-    public FormationController(FormationDAO formationDAO) {
+
+    public FormationController(FormationDAO formationDAO, UserDAO userDAO) {
         this.formationDAO = formationDAO;
+        this.userDAO = userDAO;
     }
 
-    @GetMapping("/addFormation")
-    public String addFormation(Model m) {
-        m.addAttribute("formation", new Formation());
+    @GetMapping("/addFormation/{id}")
+    public String addFormation(Model m,@PathVariable long id) {
+        User user=userDAO.findById(id).get();
+        long formation_id= formationDAO.findByUser(user).getId();
+        m.addAttribute("formation", formationDAO.findById(formation_id));
+        //m.addAttribute("formation",formationDAO.findByUser(user).get());
+       // m.addAttribute("formation", new Formation());
         return "addFormation";
     }
 
@@ -34,11 +43,7 @@ public class FormationController {
         return new RedirectView("/addExperience");
     }
 
-    @GetMapping("/addFormation/{city}")
-    public String addFormation(Model m, @PathVariable String city){
-        m.addAttribute("formation", formationDAO.findByCity(city));
-        return "addFormation";
-    }
+
 
     /*@GetMapping("/")
     public String homePage(Model m) {

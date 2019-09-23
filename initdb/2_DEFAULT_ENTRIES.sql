@@ -8,4 +8,4 @@ INSERT INTO defaultdb.users (id, first_name, last_name) VALUES (7, 'Gaston', 'La
 INSERT INTO defaultdb.users (id, first_name, last_name) VALUES (8, 'Gisèle', 'Detable');
 INSERT INTO defaultdb.users (id, first_name, last_name) VALUES (9, 'Thomas', 'Ouaque');
 INSERT INTO defaultdb.users (id, first_name, last_name) VALUES (10, 'Sacha', 'Telfrize');*/
-INSERT INTO defaultdb.formations (id, formation_name, description, level, city, beg_year, end_year, ended, user_id) VALUES (1,'EPF','Sceaux','','','2009','2010',1,1);
+INSERT INTO defaultdb.formations (id, formation_name, description, level, city, beg_year, end_year, ended, user_id) VALUES (4,'EPF','Sceaux','','','2009','2010',1,11);

@@ -2,6 +2,7 @@ package fr.takima.demo.controller;
 
 import fr.takima.demo.dao.UserDAO;
 import fr.takima.demo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @Controller
 public class UserController {
-
+  @Autowired
   private final UserDAO userDAO;
 
   public UserController(UserDAO userDAO) {

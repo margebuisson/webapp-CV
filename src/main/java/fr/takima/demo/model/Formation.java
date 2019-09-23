@@ -1,7 +1,7 @@
 package fr.takima.demo.model;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.text.Normalizer;
 
 @Entity(name = "formations")
 public class Formation{
