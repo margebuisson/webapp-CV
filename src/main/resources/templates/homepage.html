@@ -5,15 +5,27 @@
 <head>
     <title>Home Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
 </head>
 
 <body>
 
-<h1 class = "text-center"> Welcome to your CV creator ! </h1>
+<nav class="navbarSiteWeb navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <form class="form-inline">
+        <a href="./" class="btn btn-outline-success" id="goHomePage">HomePage</a>
+    </form>
+</nav>
 
-<div class="cadrePage">
+<h1 class = "titreh1"> Welcome to your CV creator ! </h1>
+
+<div class="cadrePageAcceuil">
+
+    <div class="button">
+    <label for="createAccountButton"> Vous n'avez pas encore de compte ? </label>
+    <a href="./createAccount" class="btn btn-primary" id="createAccountButton">Créer un compte</a>
+    </div>
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -29,7 +41,10 @@
             <td th:text="${user.lastName}"></td>
             <td>
                 <div class="btn-group float-right m-3">
-                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn btn-primary">Créer un compte</a>
+                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/modifier-png-6.png" width="25px"></a>
+                    <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/formation.png" width="25px"></a>
+                    <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/professionnel.png" width="25px"></a>
+                    <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/CV.png" width="25px"></a>
                 </div>
             </td>
         </tr>
@@ -38,13 +53,6 @@
 
 </div>
 
-<h2 class="text-center"> New on this website ? Just sign in ! </h2>
-
-<div class="container">
-    <div class="btn-group float-right m-3">
-        <a href="/createAccount" class="btn btn-primary">Créer un compte</a>
-    </div>
-</div>
 </body>
 
 </html>

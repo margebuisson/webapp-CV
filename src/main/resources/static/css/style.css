@@ -1,0 +1,128 @@
+.infosPerso {
+    margin-right: 5px;
+    margin-bottom: 0px;
+}
+
+#box_flottante {
+    float:left;
+    margin-right: 20px;
+}
+
+/* exemple cours web design */
+
+.monbloc {
+    width:700px;
+    height:auto;
+    /*background-color:yellow;*/
+    padding: 0px 0px 0px 5px;		/* créé de l'espace dans le contenu du bloc pour en faire réspirer le contenu. */
+    /*lire les valeurs dans le sens horaire: haut droit bas gauche */
+    /*border-top: 5px solid blue;*/		/* on ne se sert pas du raccourci avec les 4 valeurs car on */
+    /*border-bottom: 4px dotted hotpink;*/	/* précise un type de bordure en plus de la couleur */
+    border-left: 1px solid black;
+    margin: auto; 				/* marge de chaque côté exterieur du bloc, */
+    /*margin-top: 0px;*/			/* margin: auto permet de centrer horizontalement */
+    /*margin-bottom:0px;*/
+    /*outline: 2px solid red;*/
+    /*outline-offset: 5px;*/
+}
+
+.titreCV {
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+.titreh1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.photoProfil {
+    margin-top: 20px;
+}
+
+.cadrePageAcceuil{
+    margin-top: 20px;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.cadrePage {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+}
+
+.button {
+    margin : 20px;
+}
+
+.buttonAdd {
+    position: fixed;
+    margin-left: 60%;
+}
+
+.buttonhome {
+    margin-right: 5px;
+}
+
+.navbarSiteWeb{
+    position: fixed;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 30%;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+
+/* toast */
+
+/* source : https://www.w3schools.com/howto/howto_js_snackbar.asp */
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

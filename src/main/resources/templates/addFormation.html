@@ -6,13 +6,30 @@
     <title>Professional Training</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
 </head>
 
 <body>
 
+<nav class="navbarSiteWeb navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <form class="form-inline">
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Home</a>
+        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Personnal Info</a>
+        <a href="./addFormation" class="btn btn-outline-success" id="goFormationInfo">Formation Info</a>
+        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Professionnal Info</a>
+    </form>
+</nav>
+
     <h1 class = "text-center"> Fill in your professional training : </h1>
 
-<div class="container">
+    <div class="cadrePage">
+        <div class="buttonAdd">
+            <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+        </div>
+    </div>
+
+<div class="cadrePage" id="formulaire">
     <form method="post" th:action="@{/addFormation}" th:object="${formation}">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -25,11 +42,11 @@
             </div>
         </div>
         <div class="form-row">
-            <div>
+            <div class="form-group col-md-2">
                 <label for="trainingStartDate">Start Date</label>
                 <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
-            <div id="trainingEndDateDiv">
+            <div class="form-group col-md-2">
                 <label for="trainingEndDate">End Date</label>
                 <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
@@ -53,21 +70,17 @@
             <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Give more details about what you have done during your training"></textarea>
         </div>
 
-        <div class="container">
-            <div class="btn-group float-right m-3">
-                <a href="./addFormation" class="btn btn-primary">Ajouter une autre formation</a>
-            </div>
+        <div class="button">
+        <a href="./addExperience" onclick="myFunction()" type="submit" class="btn btn-primary">Save</a>
         </div>
 
-        <div class="container">
-            <div class="btn-group float-right m-3">
-                <a href="./addExperience" class="btn btn-primary">Passer aux expériences professionnelles</a>
-            </div>
-        </div>
+        <div id="snackbar">The formation has been added</div>
 
     </form>
 </div>
 
 </body>
 
+<script src="/js/script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </html>
