@@ -72,14 +72,14 @@
 
                     <div class="form-group  col-md-2">
                         <label for="endedornot">Poste actuel ?</label>
-                        <select name="endedornot" class="custom-select" th:value="ended" th:field="*{ended}" id="endedornot">
+                        <select id="endedornot" onchange="affiche(this.value)" name="endedornot" class="custom-select" th:value="ended" th:field="*{ended}">
                             <option value="0">oui
                             <option value="1">non
                         </select>
                     </div>
 
 
-                <div class="form-group col-md-2">
+                <div class="actuel form-group col-md-2">
                     <label for="trainingEndDate">Fin</label>
                     <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
                 </div>

@@ -3,6 +3,10 @@
     margin-bottom: 0px;
 }
 
+.actuel{
+    visibility: hidden;
+}
+
 #box_flottante {
     float:left;
     margin-right: 20px;
