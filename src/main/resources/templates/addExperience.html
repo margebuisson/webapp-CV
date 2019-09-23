@@ -26,11 +26,11 @@
 
 <div class="cadrePage">
     <div class="buttonAdd">
-        <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Ajouter une experience professionnelle</a>
+        <a onclick="cloning()" class="btn btn-primary float-right" id="clone"  title="Ajouter une expérience professionnelle"><img src="/images/add1.png" width="25px"></a>
     </div>
 </div>
 
-<div class="container" id="formulaire">
+<div class="cadrePage" id="formulaire">
     <!--/*@thymesVar id="experience" type="var"*/-->
         <form method="post" th:action="@{/addExperience}" th:object="${experience}">
             <div class="form-row">
@@ -46,13 +46,15 @@
                            aria-describedby="lastNameHelp" placeholder="Entrez le nom de l'entreprise">
                 </div>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-row">
+                <div class="form-group  col-md-2">
                 <label for="contractTypeInput">Type de contrat</label>
-                <select name="contractType" size="1" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
+                <select name="contractType" class="custom-select" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
                     <option value="0">CDD
                     <option value="1">CDI
                     <option value="2">Stage
                 </select>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -62,29 +64,30 @@
                 </div>
 
             </div>
-            <div class="form row">
+            <div class="form-row">
                 <div class="form-group col-md-2">
-                    <label for="begYearInput">Début</label>
-                    <input type="int" th:value="begYear" th:field="*{begYear}" class="form-control" id="begYearInput">
+                    <label for="trainingStartDate">Début</label>
+                    <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
                 </div>
 
-                <div class="form-inline col-md-2">
-                    <label for="exampleCheck1">Cochez s'il s'agit de votre poste actuel</label>
-                    <input type="checkbox" th:value="ended" th:field="*{ended}" class="form-check-input" id="exampleCheck1">
-                </div>
-
-                <div class="form-group col-md-2">
-                    <label for="endYearInput">Fin</label>
-                    <div class="col-sm-8">
-                        <input type="int" th:value="endYear" th:field="*{endYear}" class="form-control" id="endYearInput">
-                        <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
+                    <div class="form-group  col-md-2">
+                        <label for="endedornot">Poste actuel ?</label>
+                        <select name="endedornot" class="custom-select" th:value="ended" th:field="*{ended}" id="endedornot">
+                            <option value="0">oui
+                            <option value="1">non
+                        </select>
                     </div>
+
+
+                <div class="form-group col-md-2">
+                    <label for="trainingEndDate">Fin</label>
+                    <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
                 </div>
             </div>
         </form>
 
-    <div class="buttonFloat">
-        <a onclick="toast()" class="btn btn-danger">Supprimer</a>
+    <div class="button">
+        <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
     </div>
 
     <div id="snackbar">Ce poste a bien été supprimé</div>
@@ -92,7 +95,7 @@
 </div>
 
 <div class="cadrePage">
-<div class="buttonAdd">
+<div class="buttonSave">
     <a href="./viewCV" type="submit" class="btn btn-primary float-right">Enregistrer les informations et accéder à votre CV</a>
 </div>
 </div>

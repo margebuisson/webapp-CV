@@ -65,6 +65,10 @@
     margin-right: 5px;
 }
 
+.buttonSave{
+    position: fixed;
+}
+
 .navbarSiteWeb{
     position: fixed;
     width: 100%;

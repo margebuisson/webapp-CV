@@ -21,13 +21,13 @@
     </form>
 </nav>
 
-    <h1 class = "text-center"> Renseigner vos études </h1>
+<h1 class = "text-center"> Renseigner vos études </h1>
 
-    <div class="cadrePage">
-        <div class="buttonAdd">
-            <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Ajouter une formation</a>
-        </div>
+<div class="cadrePage">
+    <div class="buttonAdd">
+        <a onclick="cloning()" class="btn btn-primary float-right" id="clone" title="Ajouter une formation supplémentaire" ><img src="/images/add1.png" width="25px"></a>
     </div>
+</div>
 
 <div class="cadrePage" id="formulaire">
     <form method="post" th:action="@{/addFormation}" th:object="${formation}">
@@ -46,15 +46,24 @@
                 <label for="trainingStartDate">Début</label>
                 <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
             </div>
+
+            <div class="form-group  col-md-2">
+                <label for="endedornot">Formation actuelle ?</label>
+                <select name="endedornot" class="custom-select" th:value="ended" th:field="*{ended}" id="endedornot">
+                    <option value="0">oui
+                    <option value="1">non
+                </select>
+            </div>
+
             <div class="form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
                 <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
             </div>
         </div>
-        <div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
             <label for="trainingLevel">Niveau du diplôme</label>
-
-            <select th:value="traininglevel" th:field="*{level}" class="custom-select mr-sm-2" id="trainingLevel">
+            <select th:value="traininglevel" th:field="*{level}" class="custom-select" id="trainingLevel">
                 <option value="1">BAC +1</option>
                 <option value="2">BAC +2</option>
                 <option value="3">BAC +3</option>
@@ -64,14 +73,15 @@
                 <option value="7">BAC +7</option>
                 <option value="8">BAC +8</option>
             </select>
+            </div>
         </div>
         <div class="overflow-auto">
             <label for="trainingDescription">Description</label>
             <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
         </div>
 
-        <div class="buttonFloat">
-            <a onclick="toast()" class="btn btn-danger">Supprimer</a>
+        <div class="button">
+            <a onclick="toast()" class="btn btn-danger" title="Supprimer cette formation"><img src="/images/delete.png" width="25px"></a>
         </div>
 
         <div id="snackbar">La formation a bien été supprimé</div>
@@ -79,9 +89,9 @@
     </form>
 </div>
 <div class="cadrePage">
-<div class="buttonAdd">
-    <a href="./addExperience" type="submit" class="btn btn-primary float-right">Enregistrer ces études</a>
-</div>
+    <div class="buttonSave">
+        <a href="./addExperience" type="submit" class="btn btn-primary float-right">Enregistrer ces formations et passer au parcours professionnel</a>
+    </div>
 </div>
 
 </body>

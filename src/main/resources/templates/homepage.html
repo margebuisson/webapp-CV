@@ -39,11 +39,11 @@
             <td th:text="${user.lastName}"></td>
             <td width="25px">
                 <div class="btn-group float-right m-3">
-                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/modifier-png-6.png" width="25px"></a>
-                    <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/formation.png" width="25px"></a>
-                    <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/professionnel.png" width="25px"></a>
-                    <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/CV.png" width="25px"></a>
-                    <a th:href="@{'/deleteUser/'+${user.id}}" class="btn buttonhome btn-danger"><img src="/images/delete.png" width="25px"></a>
+                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations personnelles de cet utilisateur"><img src="/images/modifier-png-6.png" width="25px"></a>
+                    <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations relatives aux formations de cet utilisateur"><img src="/images/formation.png" width="25px"></a>
+                    <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations relatives au parcours professionnel de cet utilisateur"><img src="/images/professionnel.png" width="25px"></a>
+                    <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary" title="visualiser le CV de ce compte"><img src="/images/CV.png" width="25px"></a>
+                    <a th:href="@{'/deleteUser/'+${user.id}}" class="btn buttonhome btn-danger" title="Supprimer ce compte"><img src="/images/delete.png" width="25px"></a>
                 </div>
             </td>
         </tr>
