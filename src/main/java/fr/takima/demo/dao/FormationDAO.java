@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FormationDAO extends CrudRepository<Formation, Long> {
-
+    Formation findByCity(String city);
+    //Formation findByCity(String city);
 }

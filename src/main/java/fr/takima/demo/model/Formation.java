@@ -97,4 +97,6 @@ public class Formation{
     public void setEnded(boolean ended) {
         this.ended = ended;
     }
+
+
 }
