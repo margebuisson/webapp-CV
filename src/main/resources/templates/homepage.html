@@ -37,12 +37,13 @@
         <tr th:each="user : ${users}">
             <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
-            <td width="100px">
+            <td width="25px">
                 <div class="btn-group float-right m-3">
                     <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/modifier-png-6.png" width="25px"></a>
                     <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/formation.png" width="25px"></a>
                     <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/professionnel.png" width="25px"></a>
                     <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/CV.png" width="25px"></a>
+                    <a th:href="@{'/deleteUser/'+${user.id}}" class="btn buttonhome btn-danger"><img src="/images/delete.png" width="25px"></a>
                 </div>
             </td>
         </tr>
