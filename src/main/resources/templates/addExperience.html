@@ -30,9 +30,9 @@
     </div>
 </div>
 
-<div class="cadrePage" id="formulaire">
-    <!--/*@thymesVar id="experience" type="var"*/-->
-        <form method="post" th:action="@{/addExperience}" th:object="${experience}">
+
+<form method="post" th:action="@{/addExperience}" th:object="${experience}">
+    <div class="cadrePage" id="formulaire">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="jobTitleInput">Poste</label>
@@ -67,7 +67,7 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="trainingStartDate">Début</label>
-                    <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
+                    <input type="text" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
                 </div>
 
                     <div class="form-group  col-md-2">
@@ -78,27 +78,27 @@
                         </select>
                     </div>
 
-
                 <div class="actuel form-group col-md-2">
                     <label for="trainingEndDate">Fin</label>
-                    <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
+                    <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
                 </div>
             </div>
-        </form>
 
-    <div class="button">
-        <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+
+            <div class="button">
+                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+            </div>
+
+            <div id="snackbar">Ce poste a bien été supprimé</div>
     </div>
 
-    <div id="snackbar">Ce poste a bien été supprimé</div>
+    <div class="cadrePage">
+        <div class="buttonSave">
+            <button href="./viewCV" class="btn btn-primary" id="saveProInfo"> Enregistrer les informations et accéder à votre CV </button>
+        </div>
+    </div>
 
-</div>
-
-<div class="cadrePage">
-<div class="buttonSave">
-    <a href="./viewCV" type="submit" class="btn btn-primary float-right">Enregistrer les informations et accéder à votre CV</a>
-</div>
-</div>
+</form>
 
 </body>
 

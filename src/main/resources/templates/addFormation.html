@@ -29,8 +29,9 @@
     </div>
 </div>
 
+<form method="post" th:action="@{/addFormation}" th:object="${formation}">
+
 <div class="cadrePage" id="formulaire">
-    <form method="post" th:action="@{/addFormation}" th:object="${formation}">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="trainingNameInput">Nom de l'école/organisation</label>
@@ -44,7 +45,7 @@
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="trainingStartDate">Début</label>
-                <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate">
+                <input type="text" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
 
             <div class="form-group  col-md-2">
@@ -57,7 +58,7 @@
 
             <div class="actuel form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
-                <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate">
+                <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
             </div>
 
         </div>
@@ -87,13 +88,15 @@
 
         <div id="snackbar">La formation a bien été supprimé</div>
 
-    </form>
-</div>
-<div class="cadrePage">
-    <div class="buttonSave">
-        <a href="./addExperience" type="submit" class="btn btn-primary float-right">Enregistrer ces formations et passer au parcours professionnel</a>
     </div>
-</div>
+
+    <div class="cadrePage">
+        <div class="buttonSave">
+            <button href="./addExperience" class="btn btn-primary" id="saveFormaInfo"> Passer aux eperiences professionnelles </button>
+        </div>
+    </div>
+
+</form>
 
 </body>
 
