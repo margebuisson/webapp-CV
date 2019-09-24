@@ -14,23 +14,24 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Home</a>
-        <a href="./createAccount" class="btn btn-outline-success" id="goPersoInfo">Personnal Info</a>
-        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Formation Info</a>
-        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Professionnal Info</a>
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-outline-success" id="goPersoInfo">Informations personnelles</a>
+        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
-<h1 class = "titreh1"> Please fill in your personnal information : </h1>
+<div class="cadrePage">
 
-<div class="container">
+    <h1 class = "titreh1"> Renseignez vos informations personnelles : </h1>
+
     <form method="post" th:action="@{/createAccount}" th:object="${user}">
         <center>
                 <div class="form-group">
                     <img src="/images/personne.png" height="200" width="200">
                 </div>
                 <div class="form-group">
-                <label for="avatar">Choose a profile picture:</label>
+                <label for="avatar">Choisissez une photo professionnelle : </label>
                 <input type="file" th:field="*{profilPicture}"
                        id="avatar" name="avatar"
                        accept="image/png, image/jpeg">
@@ -52,85 +53,58 @@
 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="firstNameInput">First Name</label>
-                <input type="text" th:value="firstname" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Enter first name">
-                <small id="firstNameHelp" class="form-text text-muted">Having a first name is always more convenient.</small>
+                <label for="firstNameInput">Prenom</label>
+                <input type="text" th:value="firstname" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Prenom">
             </div>
             <div class="form-group col-md-6">
-                <label for="lastNameInput">Last Name</label>
-                <input type="text" th:value="lastname" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Enter last name">
-                <small id="lastNameHelp" class="form-text text-muted">Having a last name is always more convenient.</small>
+                <label for="lastNameInput">Nom</label>
+                <input type="text" th:value="lastname" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Nom">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2">
-                <label for="birthDate">Birth Date</label>
+                <label for="birthDate">Date de naissance</label>
                 <input type="date" th:value="birthdate" th:field="*{birthdate}" class="form-control" id="birthDate">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" th:value="mail" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="inputEmail4">e-mail</label>
+                <input type="email" th:value="mail" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="exemple@domaine.com">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputTelephone4">telephone</label>
+                <label for="inputTelephone4">Telephone</label>
                 <input type="text" th:value="mobilephone" th:field="*{mobilePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputAddress">Address</label>
-                <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="inputAddress">Addresse</label>
+                <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Rue">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="inputCity">City</label>
-                <input type="text" th:value="city" th:field="*{city}" class="form-control" id="inputCity">
+                <label for="inputCity">Ville</label>
+                <input type="text" th:value="city" th:field="*{city}" class="form-control" id="inputCity" placeholder="Paris">
             </div>
             <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" th:value="zipcode" th:field="*{zipCode}" class="form-control" id="inputZip">
+                <label for="inputZip">Code Postal</label>
+                <input type="text" th:value="zipcode" th:field="*{zipCode}" class="form-control" id="inputZip" placeholder="75000">
             </div>
         </div>
 
         <div class="btn-group float-left m-3">
-            <button href="./addFormation.html" class="btn btn-primary" id="savePersonnalInfo"> Add formations </button>
+            <button href="./addFormation" class="btn btn-primary" id="savePersonnalInfo"> Passer aux études </button>
         </div>
 
     </form>
 
 </div>
-
-<!-- <script>
-    function handleFiles(files) {
-        var imageType = /^image\//;
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-
-                if(i == 0){
-                    preview.innerHTML = '';
-                }
-                var img = document.createElement("img");
-                img.classList.add("obj");
-                img.file = file;
-                preview.appendChild(img);
-                var reader = new FileReader();
-                reader.onload = ( function(aImg) {
-                    return function(e) {
-                        aImg.src = e.target.result;
-                    };
-                })(img);
-
-                reader.readAsDataURL(file);
-        }
-    }
-</script> -->
 
 </body>
 

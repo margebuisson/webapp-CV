@@ -41,8 +41,8 @@ create table formations
     description    text       null,
     level          text null comment 'Mettre une liste BAC +1,2,3...',
     city           text       null,
-    beg_year       text       null,
-    end_year       text       null,
+    beg_year       int       null,
+    end_year       int       null,
     ended          tinyint(1) null,
     user_id bigint,
     constraint formations_user_fk foreign key(user_id) references users(id)

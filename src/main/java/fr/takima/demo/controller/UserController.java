@@ -73,4 +73,11 @@ public class UserController {
     return new RedirectView("/addExperience");
   }
 
+  @PostMapping("/deleteUser/{id}")
+  public RedirectView deleteUser(@ModelAttribute User user, RedirectAttributes attrs,@PathVariable long id) {
+    attrs.addFlashAttribute("message", "Utilisateur supprimé");
+    userDAO.delete(user);
+    return new RedirectView("/");
+  }
+
 }
