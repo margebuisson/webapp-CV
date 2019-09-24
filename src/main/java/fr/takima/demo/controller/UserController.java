@@ -73,7 +73,7 @@ public class UserController {
     formation.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
     formationDAO.save(formation);
-    return new RedirectView("/addExperience");
+    return new RedirectView("/addExperience/"+ user.getId());
   }
 
   @PostMapping("/deleteUser/{id}")
@@ -96,7 +96,7 @@ public class UserController {
     System.out.println("REQUEST POST");
     User user = userDAO.findById(id).get();
     System.out.println("USER: " + user.getId() + user.getFirstName());
-    // experience.setUser(user);
+    experience.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette experience a été ajoutée avec succès!");
     experienceDAO.save(experience);
     return new RedirectView("/viewCV");

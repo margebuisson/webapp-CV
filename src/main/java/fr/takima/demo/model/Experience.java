@@ -110,4 +110,8 @@ public class Experience {
         this.ended = ended;
         this.user=user;
     }
+
+    public void setUser(User user) {
+        this.user=user;
+    }
 }
