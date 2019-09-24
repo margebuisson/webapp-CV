@@ -10,8 +10,8 @@ public class Formation{
     @Id private long id;
 
     @Column(name = "formation_name") private String formationName;
-    @Column(name = "beg_year") private int begYear;
-    @Column(name = "end_Year") private int endYear;
+    @Column(name = "beg_year") private String begYear;
+    @Column(name = "end_Year") private String endYear;
     @Column(name = "city") private String city;
     @Column(name = "description") private String description;
     @Column(name = "level") private String level;
@@ -19,20 +19,38 @@ public class Formation{
     @ManyToOne
             @JoinColumn(name="user_id") private User user;
 
-
-    public Formation(String formationName, int begYear, int endYear, String city, String description, String level, boolean ended) {
+    public Formation(String formationName, String begYear, String endYear, String city, String description, String level, boolean ended, User user) {
+        this.formationName = formationName;
         this.begYear = begYear;
         this.endYear = endYear;
         this.city = city;
         this.description = description;
         this.level = level;
         this.ended = ended;
-        this.formationName = formationName;
+        this.user = user;
+    }
+
+    public void setBegYear(String begYear) {
+        this.begYear = begYear;
+    }
+
+    public void setEndYear(String endYear) {
+        this.endYear = endYear;
+    }
+    public Formation(User user) {
+        this.user = user;
     }
 
     public Formation() {
     }
 
+    public String getBegYear() {
+        return begYear;
+    }
+
+    public String getEndYear() {
+        return endYear;
+    }
 
     public long getId() {
         return id;
@@ -48,22 +66,6 @@ public class Formation{
 
     public void setFormationName(String formationName) {
         this.formationName = formationName;
-    }
-
-    public int getBegYear() {
-        return begYear;
-    }
-
-    public void setBegYear(int begYear) {
-        this.begYear = begYear;
-    }
-
-    public int getEndYear() {
-        return endYear;
-    }
-
-    public void setEndYear(int endYear) {
-        this.endYear = endYear;
     }
 
     public String getCity() {
@@ -96,5 +98,13 @@ public class Formation{
 
     public void setEnded(boolean ended) {
         this.ended = ended;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

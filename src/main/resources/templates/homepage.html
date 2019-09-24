@@ -15,23 +15,21 @@
     <!-- Navbar content -->
     <form class="form-inline">
         <a href="./" class="btn btn-outline-success" id="goHomePage">HomePage</a>
+        <a class="text-light"> &nbsp; Vous n'avez pas encore de compte ? &nbsp;</a>
+        <a href="./createAccount" class="btn btn-primary float-right" id="createAccountButton">Créer un compte</a>
     </form>
 </nav>
 
-<h1 class = "titreh1"> Welcome to your CV creator ! </h1>
-
 <div class="cadrePageAcceuil">
 
-    <div class="button">
-    <label for="createAccountButton"> Vous n'avez pas encore de compte ? </label>
-    <a href="./createAccount" class="btn btn-primary" id="createAccountButton">Créer un compte</a>
-    </div>
+    <h1 class = "titreh1"> Bienvenu sur notre site de création de CV </h1>
 
     <table class="table table-bordered">
+
         <thead class="thead-dark">
         <tr>
-            <th scope="col">firstName</th>
-            <th scope="col">lastName</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -39,12 +37,13 @@
         <tr th:each="user : ${users}">
             <td scope="row" th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
-            <td>
+            <td width="25px">
                 <div class="btn-group float-right m-3">
-                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/modifier-png-6.png" width="25px"></a>
-                    <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/formation.png" width="25px"></a>
-                    <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/professionnel.png" width="25px"></a>
-                    <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary"><img src="/images/CV.png" width="25px"></a>
+                    <a th:href="@{'/editAccount/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations personnelles de cet utilisateur"><img src="/images/modifier-png-6.png" width="25px"></a>
+                    <a th:href="@{'/editFormation/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations relatives aux formations de cet utilisateur"><img src="/images/formation.png" width="25px"></a>
+                    <a th:href="@{'/editExperience/'+${user.id}}" class="btn buttonhome btn-primary" title="modifier les informations relatives au parcours professionnel de cet utilisateur"><img src="/images/professionnel.png" width="25px"></a>
+                    <a th:href="@{'/viewCV/'+${user.id}}" class="btn buttonhome btn-primary" title="visualiser le CV de ce compte"><img src="/images/CV.png" width="25px"></a>
+                    <a th:href="@{'/deleteUser/'+${user.id}}" class="btn buttonhome btn-danger" title="Supprimer ce compte"><img src="/images/delete.png" width="25px"></a>
                 </div>
             </td>
         </tr>
