@@ -1,8 +1,9 @@
 package fr.takima.demo.controller;
 
+import fr.takima.demo.dao.FormationDAO;
 import fr.takima.demo.dao.UserDAO;
+import fr.takima.demo.model.Formation;
 import fr.takima.demo.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +18,14 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @Controller
 public class UserController {
-  @Autowired
-  private final UserDAO userDAO;
 
-  public UserController(UserDAO userDAO) {
+  private final UserDAO userDAO;
+  private final FormationDAO formationDAO;
+
+
+  public UserController(UserDAO userDAO, FormationDAO formationDAO, FormationDAO formationDAO1) {
     this.userDAO = userDAO;
+    this.formationDAO = formationDAO1;
   }
 
   @GetMapping("/")
@@ -42,16 +46,38 @@ public class UserController {
     return "createAccount";
   }
 
-
   @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
     attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
     userDAO.save(user);
-    long user_id=user.getId();
-    System.out.println(user_id);
-    return new RedirectView("/addFormation/"+user_id);
+    long id = user.getId();
+    return new RedirectView("/addFormation/"+id );
   }
 
+  @GetMapping("/addFormation/{id}")
+  public String addFormation(Model m, @PathVariable long id) {
+    m.addAttribute("formation", new Formation());
+    m.addAttribute("user", userDAO.findById(id).get());
+    return "addFormation";
+  }
 
+  @PostMapping("/addFormation/{id}")
+  public RedirectView createNewUser(@ModelAttribute Formation formation, RedirectAttributes attrs, @PathVariable long id) {
+    System.out.println("REQUETE POST");
+    User user = userDAO.findById(id).get();
+    System.out.println("USER: " + user.getId() + user.getFirstName());
+    formation.setUser(user);
+    attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
+
+    formationDAO.save(formation);
+    return new RedirectView("/addExperience");
+  }
+
+  @PostMapping("/deleteUser/{id}")
+  public RedirectView deleteUser(@ModelAttribute User user, RedirectAttributes attrs,@PathVariable long id) {
+    attrs.addFlashAttribute("message", "Utilisateur supprimé");
+    userDAO.delete(user);
+    return new RedirectView("/");
+  }
 
 }

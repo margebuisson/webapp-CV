@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface UserDAO extends CrudRepository<User, Long> {
     public User findTopByOrderByIdDesc();
 
+    public User findUserById(long id);
 }
