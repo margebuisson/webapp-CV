@@ -53,6 +53,7 @@
                 <h3 th:text="${formation.formationName}">EPF Ecole d'ingénieur-e-s</h3>
                 <p th:text="${formation.city}">Sceaux</p>
                 <div class="form-row">
+                    <p>Formation actuelle ? <a th:text="${experience.ended}"></a> </p>
                     <p th:text="${formation.begYear}">&nbsp; 2014 &nbsp;</p> <!-- " &nbsp; " est un espace -->
                     <p> to </p>
                     <p th:text="${formation.endYear}">&nbsp; 2020</p>
