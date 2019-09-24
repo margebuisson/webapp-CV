@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
     public class viewCVController {
 
-        private final UserDAO userDAO;
+       /* private final UserDAO userDAO;
         private final FormationDAO formationDAO;
 
         public viewCVController(UserDAO userDAO, FormationDAO formationDAO) {
@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.PathVariable;
             long formation_id= formationDAO.findByUser(user).getId();
             m.addAttribute("formation", formationDAO.findById(formation_id));
             return "viewCV";
-        }
+        }*/
 
 
     }

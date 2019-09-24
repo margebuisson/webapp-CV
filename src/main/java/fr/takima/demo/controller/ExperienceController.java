@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class ExperienceController {
-    @Autowired
+   /*
     private final UserDAO userDAO;
     private final ExperienceDAO experienceDAO;
     private final FormationDAO formationDAO;
@@ -43,6 +43,6 @@ public class ExperienceController {
         attrs.addFlashAttribute("message", "Expérience ajoutée avec succès");
         experienceDAO.save(experience);
         return new RedirectView("/viewCV");
-    }
+    }*/
 
 }

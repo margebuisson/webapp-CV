@@ -15,6 +15,8 @@ public class Experience {
     @Column(name = "beg_year")private int begYear;
     @Column(name = "end_year")private int endYear;
     @Column(name = "ended")private boolean ended;
+    @ManyToOne
+    @JoinColumn(name="user_id") private User user;
 
     public Experience() {
     }
@@ -98,7 +100,7 @@ public class Experience {
         this.ended = ended;
     }
 
-    public Experience(String jobTitle, String company, String contractType, String jobDescription, Integer begYear, Integer endYear, boolean ended) {
+    public Experience(String jobTitle, String company, String contractType, String jobDescription, Integer begYear, Integer endYear, boolean ended,User user) {
         this.jobTitle = jobTitle;
         this.company = company;
         this.contractType = contractType;
@@ -106,5 +108,6 @@ public class Experience {
         this.begYear = begYear;
         this.endYear = endYear;
         this.ended = ended;
+        this.user=user;
     }
 }
