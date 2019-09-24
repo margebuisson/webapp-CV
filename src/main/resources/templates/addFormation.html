@@ -34,18 +34,18 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="trainingNameInput">Nom de l'école/organisation</label>
-                <input type="text" th:value="trainingname" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="EPF">
+                <input type="text" th:value="formationName" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="EPF">
             </div>
             <div class="form-group col-md-6">
                 <label for="trainingLocationInput">Lieu</label>
-                <input type="text" th:value="traininglocation" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Sceaux">
+                <input type="text" th:value="city" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Sceaux">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="trainingStartDate">Début</label>
-                <input type="date" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
+                <input type="date" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
 
             <div class="form-group  col-md-2">
@@ -58,13 +58,13 @@
 
             <div class="actuel form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
-                <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
+                <input type="date" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
             </div>
         </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                 <label for="trainingLevel">Niveau du diplôme</label>
-                <select th:value="traininglevel" th:field="*{level}" class="custom-select" id="trainingLevel">
+                <select th:value="level" th:field="*{level}" class="custom-select" id="trainingLevel">
                     <option value="1">BAC +1</option>
                     <option value="2">BAC +2</option>
                     <option value="3">BAC +3</option>
@@ -79,7 +79,7 @@
 
             <div class="overflow-auto">
                 <label for="trainingDescription">Description</label>
-                <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
+                <textarea th:value="description" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
             </div>
 
             <div class="button">

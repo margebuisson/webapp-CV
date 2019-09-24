@@ -49,25 +49,18 @@
             <div class="form-row">
                 <div class="form-group  col-md-2">
                 <label for="contractTypeInput">Type de contrat</label>
-                <select name="contractType" class="custom-select" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
+                <select name="contractType" class="custom-select" th:value="contractType" th:field="*{contractType}" id="contractTypeInput">
                     <option value="0">CDD
                     <option value="1">CDI
                     <option value="2">Stage
                 </select>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="jobDescriptionInput">Description</label>
-                    <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
-                              rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
-                </div>
 
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="trainingStartDate">Début</label>
-                    <input type="text" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
+                    <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
                 </div>
 
                     <div class="form-group  col-md-2">
@@ -80,10 +73,17 @@
 
                 <div class="actuel form-group col-md-2">
                     <label for="trainingEndDate">Fin</label>
-                    <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
+                    <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                <label for="jobDescriptionInput">Description</label>
+                <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
+                          rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
+                </div>
+            </div>
 
             <div class="button">
                 <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
