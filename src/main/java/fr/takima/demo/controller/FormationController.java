@@ -26,9 +26,30 @@ public class FormationController {
         this.userDAO = userDAO;
     }
 
+    @GetMapping("/addFormation/{user_id}")
+    public String addFormation(Model m, @PathVariable long user_id) {
+       // long id=userDAO.findTopByOrderByIdDesc().getId();
+        m.addAttribute("user",userDAO.findById(user_id).get());
+        //User user=userDAO.findById(id).get();
+        //long formation_id= formationDAO.findByUser(user).getId();
+        //m.addAttribute("formation", formationDAO.findById(formation_id));
+        //m.addAttribute("formation",formationDAO.findByUser(user).get());
+        m.addAttribute("formation", new Formation());
+        return "addFormation";
+    }
+
+
+    @PostMapping("/addFormation")
+    public RedirectView addFormation(@ModelAttribute Formation formation, RedirectAttributes attrs) {
+        attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
+        formationDAO.save(formation);
+        return new RedirectView("/addExperience");
+    }
+
     @GetMapping("/addFormation/{id}")
-    public String addFormation(Model m,@PathVariable long id) {
-        User user=userDAO.findById(id).get();
+    public String editFormation(Model m,@PathVariable long user_id) {
+        m.addAttribute("user",userDAO.findById(user_id).get());
+        User user=userDAO.findById(user_id).get();
         long formation_id= formationDAO.findByUser(user).getId();
         m.addAttribute("formation", formationDAO.findById(formation_id));
         //m.addAttribute("formation",formationDAO.findByUser(user).get());
@@ -36,11 +57,10 @@ public class FormationController {
         return "addFormation";
     }
 
-    @PostMapping("/addFormation")
-    public RedirectView addFormation(@ModelAttribute Formation formation, RedirectAttributes attrs) {
-        attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
+    @PostMapping("/editFormation/{user_id}")
+    public String editFormation(@ModelAttribute Formation formation,  @PathVariable long user_id){
         formationDAO.save(formation);
-        return new RedirectView("/addExperience");
+        return "addFormation";
     }
 
 

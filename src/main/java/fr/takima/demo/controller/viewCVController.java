@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
     public class viewCVController {
-        @Autowired
+
         private final UserDAO userDAO;
         private final FormationDAO formationDAO;
 
