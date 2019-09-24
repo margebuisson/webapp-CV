@@ -30,8 +30,8 @@
 </div>
 
 <form method="post" th:action="@{'/addFormation/'+${user.id}}" th:object="${formation}">
-        <div class="cadrePage" id="formulaire">
-            <div class="form-row">
+    <div class="cadrePage" id="formulaire">
+        <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="trainingNameInput">Nom de l'école/organisation</label>
                 <input type="text" th:value="trainingname" th:field="*{formationName}" class="form-control" id="trainingNameInput" aria-describedby="trainingNameHelp" placeholder="EPF">
@@ -41,6 +41,7 @@
                 <input type="text" th:value="traininglocation" th:field="*{city}" class="form-control" id="trainingLocationInput" aria-describedby="trainingLocationHelp" placeholder="Sceaux">
             </div>
         </div>
+
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="trainingStartDate">Début</label>
@@ -58,37 +59,37 @@
             <div class="actuel form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
                 <input type="date" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-            <label for="trainingLevel">Niveau du diplôme</label>
-            <select th:value="traininglevel" th:field="*{level}" class="custom-select" id="trainingLevel">
-                <option value="1">BAC +1</option>
-                <option value="2">BAC +2</option>
-                <option value="3">BAC +3</option>
-                <option value="4">BAC +4</option>
-                <option value="5">BAC +5</option>
-                <option value="6">BAC +6</option>
-                <option value="7">BAC +7</option>
-                <option value="8">BAC +8</option>
-            </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                <label for="trainingLevel">Niveau du diplôme</label>
+                <select th:value="traininglevel" th:field="*{level}" class="custom-select" id="trainingLevel">
+                    <option value="1">BAC +1</option>
+                    <option value="2">BAC +2</option>
+                    <option value="3">BAC +3</option>
+                    <option value="4">BAC +4</option>
+                    <option value="5">BAC +5</option>
+                    <option value="6">BAC +6</option>
+                    <option value="7">BAC +7</option>
+                    <option value="8">BAC +8</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="overflow-auto">
+                <label for="trainingDescription">Description</label>
+                <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
+            </div>
+
+            <div class="button">
+                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette formation"><img src="/images/delete.png" width="25px"></a>
+            </div>
+
+            <div id="snackbar">La formation a bien été supprimé</div>
+
             </div>
         </div>
-        <div class="overflow-auto">
-            <label for="trainingDescription">Description</label>
-            <textarea th:value="trainingdescription" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
-        </div>
-
-        <div class="button">
-        <button onclick="myFunction()" type="submit" class="btn btn-primary">Save</button>
-        </div>
-
-        <!-- <div class="button">
-                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette formation"><img src="/images/delete.png" width="25px"></a>
-            </div>-->
-
-        <div id="snackbar">La formation a bien été supprimé</div>
-
     </div>
 
     <div class="cadrePage">
