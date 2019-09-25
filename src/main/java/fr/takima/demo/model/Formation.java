@@ -61,6 +61,7 @@ public class Formation{
         return user;
     }
 
+
     public String getFormationName() {
         return formationName;
     }
