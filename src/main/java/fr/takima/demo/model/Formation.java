@@ -44,6 +44,7 @@ public class Formation{
     public Formation() {
     }
 
+
     public String getBegYear() {
         return begYear;
     }
@@ -59,6 +60,7 @@ public class Formation{
     public User getUser() {
         return user;
     }
+
 
     public String getFormationName() {
         return formationName;
