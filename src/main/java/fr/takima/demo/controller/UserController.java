@@ -78,7 +78,7 @@ public class UserController {
   }
 
   @PostMapping("/addFormation/{id}")
-  public RedirectView createNewUser(@ModelAttribute Formation formation, RedirectAttributes attrs, @PathVariable long id) {
+  public RedirectView addFormation(@ModelAttribute Formation formation, RedirectAttributes attrs, @PathVariable long id) {
     User user = userDAO.findById(id).get();
     formation.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
@@ -86,6 +86,29 @@ public class UserController {
     return new RedirectView("/addExperience");
   }
 
+  @GetMapping("/editFormation/{id}")
+  public String editFormation(Model m, @PathVariable long id) {
+    User user = userDAO.findById(id).get();
+    Formation formation = formationDAO.findByUser(user);
+    m.addAttribute("formation", formation);
+    m.addAttribute("user", user);
+    return "editFormation";
+  }
+
+  @PostMapping("/editFormation/{id}")
+  public RedirectView editFormation(@ModelAttribute Formation formation,@ModelAttribute User user, RedirectAttributes attrs, @PathVariable long id) {
+    Formation oldFormation = formationDAO.findByUser(user);
+    oldFormation.setBegYear(formation.getBegYear());
+    oldFormation.setFormationName(formation.getFormationName());
+    oldFormation.setCity(formation.getCity());
+    oldFormation.setDescription(formation.getDescription());
+    oldFormation.setLevel(formation.getLevel());
+    oldFormation.setEnded(formation.isEnded());
+    oldFormation.setEndYear(formation.getEndYear());
+    attrs.addFlashAttribute("confirmation", "Vos changements ont été sauvegardés!");
+    formationDAO.save(oldFormation);
+    return new RedirectView("/addExperience");
+  }
   @PostMapping("/deleteUser/{id}")
   public RedirectView deleteUser(@ModelAttribute User user, RedirectAttributes attrs,@PathVariable long id) {
     attrs.addFlashAttribute("message", "Utilisateur supprimé");

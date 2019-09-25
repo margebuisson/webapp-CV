@@ -44,6 +44,7 @@ public class Formation{
     public Formation() {
     }
 
+
     public String getBegYear() {
         return begYear;
     }
