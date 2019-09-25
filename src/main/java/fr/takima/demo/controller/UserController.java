@@ -88,7 +88,6 @@ public class UserController {
     attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
     formationDAO.save(formation);
     return new RedirectView("/addExperience/"+ user.getId());
-    return new RedirectView("/addExperience/"+user.getId());
   }
 
   @GetMapping("/editFormation/{id}")
@@ -112,7 +111,7 @@ public class UserController {
     oldFormation.setEndYear(formation.getEndYear());
     attrs.addFlashAttribute("confirmation", "Vos changements ont été sauvegardés!");
     formationDAO.save(oldFormation);
-    return new RedirectView("/addExperience");
+    return new RedirectView("/addExperience/"+user.getId());
   }
 
   @GetMapping("/editExperience/{id}")
