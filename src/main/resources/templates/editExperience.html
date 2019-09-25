@@ -15,14 +15,14 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
-        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
-        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations personnelles</a>
+        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-outline-success" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
-<h1 class="titreh1"> Renseignez votre parcours professionnel</h1>
+<h1 class="titreh1"> Renseignez votre parcour professionnel</h1>
 
 <div class="cadrePage">
     <div class="buttonAdd">
@@ -31,7 +31,7 @@
 </div>
 
 
-<form method="post" th:action="@{'/addExperience/'+${user.id}}" th:object="${experience}">
+<form method="post" th:action="@{'/editExperience/'+${user.id}}" th:object="${experience}">
     <div class="cadrePage" id="formulaire">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -54,21 +54,14 @@
                     <option value="1">CDI
                     <option value="2">Stage
                 </select>
-                </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="jobDescriptionInput">Description</label>
-                    <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
-                              rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
-                </div>
+        </div>
 
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="trainingStartDate">Début</label>
+                <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-2">
-                    <label for="trainingStartDate">Début</label>
-                    <input type="text" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
-                </div>
 
             <div class="form-group  col-md-2">
                 <label for="endedornot">Poste actuel ?</label>
@@ -78,23 +71,30 @@
                 </select>
             </div>
 
-                <div class="actuel form-group col-md-2">
-                    <label for="trainingEndDate">Fin</label>
-                    <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
-                </div>
+            <div class="actuel form-group col-md-2">
+                <label for="trainingEndDate">Fin</label>
+                <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
             </div>
+        </div>
 
-
-            <div class="button">
-                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="jobDescriptionInput">Description</label>
+                <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
+                          rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
             </div>
+        </div>
+
+        <div class="button">
+            <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+        </div>
 
         <div id="snackbar">Ce poste a bien été supprimé</div>
     </div>
 
     <div class="cadrePage">
         <div class="buttonSave">
-            <button href="./viewCV" class="btn btn-primary" id="saveProInfo"> Enregistrer les informations et accéder à votre CV </button>
+            <button type="submit" class="btn btn-primary" id="saveProInfo"> Enregistrer les informations et accéder à votre CV </button>
         </div>
     </div>
 

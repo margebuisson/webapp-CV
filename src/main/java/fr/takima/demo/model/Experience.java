@@ -40,6 +40,17 @@ public class Experience {
         return Objects.hash(getJobTitle(), getCompany(), getContractType(), getJobDescription(), getBegYear(), getEndYear(), isEnded());
     }
 
+    public Experience(String jobTitle, String company, String contractType, String jobDescription, int begYear, int endYear, boolean ended, User user) {
+        this.jobTitle = jobTitle;
+        this.company = company;
+        this.contractType = contractType;
+        this.jobDescription = jobDescription;
+        this.begYear = begYear;
+        this.endYear = endYear;
+        this.ended = ended;
+        this.user = user;
+    }
+
     public long getId() {
         return id;
     }
@@ -105,7 +116,16 @@ public class Experience {
         this.company = company;
         this.contractType = contractType;
         this.jobDescription = jobDescription;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setBegYear(int begYear) {
         this.begYear = begYear;
+    }
+
+    public void setEndYear(int endYear) {
         this.endYear = endYear;
         this.ended = ended;
         this.user=user;
@@ -114,4 +134,11 @@ public class Experience {
     public void setUser(User user) {
         this.user=user;
     }
+
+
+    public User getUser() {
+        return user;
+    }
+
+
 }

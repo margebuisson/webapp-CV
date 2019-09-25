@@ -14,10 +14,10 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
-        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
-        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a href="./addFormation" class="btn btn-outline-success" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<form method="post" th:action="@{'/addFormation/'+${user.id}}" th:object="${formation}">
+<form method="post" th:action="@{'/editFormation/'+${user.id}}" th:object="${formation}">
     <div class="cadrePage" id="formulaire">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -45,7 +45,7 @@
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="trainingStartDate">Début</label>
-                <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
+                <input type="date" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
 
             <div class="form-group  col-md-2">
@@ -58,11 +58,11 @@
 
             <div class="actuel form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
-                <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate">
+                <input type="date" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
             </div>
         </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
+        <div class="form-row">
+            <div class="form-group col-md-4">
                 <label for="trainingLevel">Niveau du diplôme</label>
                 <select th:value="level" th:field="*{level}" class="custom-select" id="trainingLevel">
                     <option value="1">BAC +1</option>
@@ -74,26 +74,26 @@
                     <option value="7">BAC +7</option>
                     <option value="8">BAC +8</option>
                 </select>
-                </div>
             </div>
+        </div>
 
-            <div class="overflow-auto">
-                <label for="trainingDescription">Description</label>
-                <textarea th:value="description" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
-            </div>
+        <div class="overflow-auto">
+            <label for="trainingDescription">Description</label>
+            <textarea th:value="description" th:field="*{description}" class="form-control" id="trainingDescription" rows="3" placeholder="Donnez plus de détails sur ce que vous avez fait durant ces études/formations..."></textarea>
+        </div>
 
-            <div class="button">
-                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette formation"><img src="/images/delete.png" width="25px"></a>
-            </div>
+        <div class="button">
+            <a onclick="toast()" class="btn btn-danger" title="Supprimer cette formation"><img src="/images/delete.png" width="25px"></a>
+        </div>
 
-            <div id="snackbar">La formation a bien été supprimé</div>
+        <div id="snackbar">La formation a bien été supprimé</div>
 
-            </div>
+    </div>
     </div>
 
     <div class="cadrePage">
         <div class="buttonSave">
-            <button href="./addExperience" class="btn btn-primary" id="saveFormaInfo"> Passer aux eperiences professionnelles </button>
+            <button type="submit" class="btn btn-primary" id="saveFormaInfo"> Passer aux experiences professionnelles </button>
         </div>
     </div>
 
