@@ -93,9 +93,7 @@ public class UserController {
 
   @PostMapping("/addExperience/{id}")
   public RedirectView addExperience(@ModelAttribute Experience experience, RedirectAttributes attrs, @PathVariable long id) {
-    //System.out.println("REQUEST POST");
     User user = userDAO.findById(id).get();
-   // System.out.println("USER: " + user.getId() + user.getFirstName());
     experience.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette experience a été ajoutée avec succès!");
     experienceDAO.save(experience);
