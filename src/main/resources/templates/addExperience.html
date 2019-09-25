@@ -22,76 +22,74 @@
     </form>
 </nav>
 
-<h1 class="text-center"> Please complete you professional experiences : </h1>
+<h1 class="titreh1"> Renseignez votre parcour professionnel</h1>
 
 <div class="cadrePage">
     <div class="buttonAdd">
-        <a onclick="cloning()" class="btn btn-primary float-right" id="clone">Add</a>
+        <a onclick="cloning()" class="btn btn-primary float-right" id="clone"  title="Ajouter une expérience professionnelle"><img src="/images/add1.png" width="25px"></a>
     </div>
 </div>
 
 
-<form method="post" th:action="@{/addExperience}" th:object="${experience}">
+<form method="post" th:action="@{'/addExperience/'+${user.id}}" th:object="${experience}">
     <div class="cadrePage" id="formulaire">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="jobTitleInput">Job title</label>
-                    <input type="text" th:value="jobTitle" th:field="*{jobTitle}" class="form-control" id="jobTitleInput"
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="jobTitleInput">Poste</label>
+                <input type="text" th:value="jobTitle" th:field="*{jobTitle}" class="form-control" id="jobTitleInput"
 
-                           aria-describedby="firstNameHelp" placeholder="Enter job name">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="companyInput">Company</label>
-                    <input type="text" th:value="company" th:field="*{company}" class="form-control" id="companyInput"
-                           aria-describedby="lastNameHelp" placeholder="Enter company name">
-                </div>
+                       aria-describedby="firstNameHelp" placeholder="Entrez votre poste">
             </div>
             <div class="form-group col-md-6">
-                <label for="contractTypeInput">Contract type</label>
-                <select name="contractType" size="1" th:value="contactType" th:field="*{contractType}" id="contractTypeInput">
+                <label for="companyInput">Entreprise</label>
+                <input type="text" th:value="company" th:field="*{company}" class="form-control" id="companyInput"
+                       aria-describedby="lastNameHelp" placeholder="Entrez le nom de l'entreprise">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group  col-md-2">
+                <label for="contractTypeInput">Type de contrat</label>
+                <select name="contractType" class="custom-select" th:value="contractType" th:field="*{contractType}" id="contractTypeInput">
                     <option value="0">CDD
                     <option value="1">CDI
                     <option value="2">Stage
                 </select>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="jobDescriptionInput">Job Description</label>
-                    <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
-                              rows="3" placeholder="job Description"></textarea>
-                </div>
+        </div>
 
-            </div>
-            <div class="form row">
-                <label for="begYearInput" class="col-sm-4 col-form-label">Beginning year</label>
-                <div class="col-sm-8">
-                    <input type="int" th:value="begYear" th:field="*{begYear}" class="form-control" id="begYearInput"
-                           placeholder="Beginning year">
-                </div>
-                <div/>
-                <div class="form-row">
-                    <label class="form-check-label" for="exampleCheck1">Job ended</label>
-                    <input type="checkbox" th:value="ended" th:field="*{ended}" class="form-check-input" id="exampleCheck1">
-                </div>
-                <div class="form-row">
-                    <label for="endYearInput" class="col-sm-4 col-form-label">End year</label>
-                    <div class="col-sm-8">
-                        <input type="int" th:value="endYear" th:field="*{endYear}" class="form-control" id="endYearInput">
-                        <!-- Afficher ce champs uniquement si la checkbox ended renvoi vrai cad que le job est terminé /-->
-                    </div>
-
-                <div class="actuel form-group col-md-2">
-                    <label for="trainingEndDate">Fin</label>
-                    <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
-                </div>
-            </div>
-        </form>
-
-            <div class="button">
-                <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="trainingStartDate">Début</label>
+                <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
 
-            <div id="snackbar">Ce poste a bien été supprimé</div>
+            <div class="form-group  col-md-2">
+                <label for="endedornot">Poste actuel ?</label>
+                <select id="endedornot" onchange="affiche(this.value)" name="endedornot" class="custom-select" th:value="ended" th:field="*{ended}">
+                    <option value="0">oui
+                    <option value="1">non
+                </select>
+            </div>
+
+            <div class="actuel form-group col-md-2">
+                <label for="trainingEndDate">Fin</label>
+                <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="jobDescriptionInput">Description</label>
+                <textarea type="text" th:value="jobDescription" th:field="*{jobDescription}" class="form-control" id="jobDescriptionInput"
+                          rows="3" placeholder="Donnez plus de détails concernant ce poste, votre rôle au sein de l'entreprise et ce que vous avez accompli..."></textarea>
+            </div>
+        </div>
+
+        <div class="button">
+            <a onclick="toast()" class="btn btn-danger" title="Supprimer cette experience professionnelle"><img src="/images/delete.png" width="25px"></a>
+        </div>
+
+        <div id="snackbar">Ce poste a bien été supprimé</div>
     </div>
 
     <div class="cadrePage">

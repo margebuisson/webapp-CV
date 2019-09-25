@@ -93,13 +93,13 @@ public class UserController {
 
   @PostMapping("/addExperience/{id}")
   public RedirectView addExperience(@ModelAttribute Experience experience, RedirectAttributes attrs, @PathVariable long id) {
-    System.out.println("REQUEST POST");
+    //System.out.println("REQUEST POST");
     User user = userDAO.findById(id).get();
-    System.out.println("USER: " + user.getId() + user.getFirstName());
+   // System.out.println("USER: " + user.getId() + user.getFirstName());
     experience.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette experience a été ajoutée avec succès!");
     experienceDAO.save(experience);
-    return new RedirectView("/viewCV");
+    return new RedirectView("/viewCV/"+ user.getId());
   }
 
   @GetMapping("viewCV/{id}")
@@ -107,7 +107,7 @@ public class UserController {
     User user=userDAO.findById(id).get();
     m.addAttribute("user", user);
     m.addAttribute("formation",formationDAO.findByUser(user));
-    // m.addAttribute("experience", experienceDAO.findByUser(user));
+    m.addAttribute("experience", experienceDAO.findByUser(user));
     return "viewCV";
   }
 
