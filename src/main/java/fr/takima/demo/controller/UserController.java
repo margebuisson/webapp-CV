@@ -40,17 +40,33 @@ public class UserController {
     return "createAccount";
   }
 
-  @GetMapping("/editAccount/{id}")
-  public String addUserPage(Model m, @PathVariable long id) {
-    m.addAttribute("user", userDAO.findById(id).get());
-    return "createAccount";
-  }
-
   @PostMapping("/createAccount")
   public RedirectView createNewUser(@ModelAttribute User user, RedirectAttributes attrs) {
     attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
     userDAO.save(user);
     long id = user.getId();
+    return new RedirectView("/addFormation/"+id );
+  }
+
+  @GetMapping("/editAccount/{id}")
+  public String addUserPage(Model m, @PathVariable long id) {
+    m.addAttribute("user", userDAO.findById(id).get());
+    return "editAccount";
+  }
+
+  @PostMapping("/editAccount/{id}")
+  public RedirectView updateUser(@ModelAttribute User user, RedirectAttributes attrs, @PathVariable long id) {
+    attrs.addFlashAttribute("message", "Utilisateur ajouté avec succès");
+    User oldUser = userDAO.findById(id).get();
+    oldUser.setFirstName(user.getFirstName());
+    oldUser.setAddress(user.getAddress());
+    oldUser.setBirthdate(user.getBirthdate());
+    oldUser.setCity(user.getCity());
+    oldUser.setMail(user.getMail());
+    oldUser.setZipCode(user.getZipCode());
+    oldUser.setLastName(user.getLastName());
+    oldUser.setMobilePhone(user.getMobilePhone());
+    userDAO.save(oldUser);
     return new RedirectView("/addFormation/"+id );
   }
 
@@ -63,12 +79,9 @@ public class UserController {
 
   @PostMapping("/addFormation/{id}")
   public RedirectView createNewUser(@ModelAttribute Formation formation, RedirectAttributes attrs, @PathVariable long id) {
-    System.out.println("REQUETE POST");
     User user = userDAO.findById(id).get();
-    System.out.println("USER: " + user.getId() + user.getFirstName());
     formation.setUser(user);
     attrs.addFlashAttribute("confirmation", "Cette formation a été ajoutée avec succès!");
-
     formationDAO.save(formation);
     return new RedirectView("/addExperience");
   }

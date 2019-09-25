@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Formulaire infos perso</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
+</head>
+
+<body>
+
+<nav class="navbarSiteWeb navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <form class="form-inline">
+        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a href="./createAccount" class="btn btn-outline-success" id="goPersoInfo">Informations personnelles</a>
+        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
+    </form>
+</nav>
+
+<div class="cadrePage">
+
+    <h1 class = "titreh1"> Renseignez vos informations personnelles : </h1>
+
+    <form method="post" th:action="@{'/editAccount/'+${user.id}}" th:object="${user}">
+        <center>
+            <div class="form-group">
+                <img src="/images/personne.png" height="200" width="200">
+            </div>
+            <div class="form-group">
+                <label for="avatar">Choisissez une photo professionnelle : </label>
+                <input type="file" th:field="*{profilPicture}"
+                       id="avatar" name="avatar"
+                       accept="image/png, image/jpeg">
+            </div>
+        </center>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstNameInput">Prenom</label>
+                <input type="text" th:value="firstName" th:field="*{firstName}" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" placeholder="Prenom">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastNameInput">Nom</label>
+                <input type="text" th:value="lastName" th:field="*{lastName}" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" placeholder="Nom">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="birthDate">Date de naissance</label>
+                <input type="date" th:value="birthdate" th:field="*{birthdate}" class="form-control" id="birthDate">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">e-mail</label>
+                <input type="email" th:value="mail" th:field="*{mail}" class="form-control" id="inputEmail4" placeholder="exemple@domaine.com">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputTelephone4">Telephone</label>
+                <input type="text" th:value="mobilePhone" th:field="*{mobilePhone}" class="form-control" id="inputTelephone4" placeholder="Telephone">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Addresse</label>
+                <input type="text" th:value="address" th:field="*{address}" class="form-control" id="inputAddress" placeholder="1234 Rue">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputCity">Ville</label>
+                <input type="text" th:value="city" th:field="*{city}" class="form-control" id="inputCity" placeholder="Paris">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Code Postal</label>
+                <input type="text" th:value="zipCode" th:field="*{zipCode}" class="form-control" id="inputZip" placeholder="75000">
+            </div>
+        </div>
+
+        <div class="btn-group float-left m-3">
+            <button type="submit" class="btn btn-primary" id="savePersonnalInfo"> Passer aux études </button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
