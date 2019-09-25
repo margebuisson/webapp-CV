@@ -14,10 +14,10 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
-        <a href="./addFormation" class="btn btn-outline-success" id="goFormationInfo">Etudes</a>
-        <a href="./addExperience" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
+        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-success" id="goFormationInfo">Etudes</a>
+        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
@@ -45,7 +45,7 @@
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="trainingStartDate">Début</label>
-                <input type="date" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
+                <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
             </div>
 
             <div class="form-group  col-md-2">
@@ -58,7 +58,7 @@
 
             <div class="actuel form-group col-md-2">
                 <label for="trainingEndDate">Fin</label>
-                <input type="date" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
+                <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
             </div>
         </div>
         <div class="form-row">
@@ -93,7 +93,7 @@
 
     <div class="cadrePage">
         <div class="buttonSave">
-            <button type="submit" class="btn btn-primary" id="saveFormaInfo"> Passer aux experiences professionnelles </button>
+            <button type="submit" class="btn btn-primary" id="saveFormaInfo"> Sauvegarder les modifications </button>
         </div>
     </div>
 

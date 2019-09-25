@@ -15,20 +15,22 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
-        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
-        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-success" id="goProInfo">Parcour Professionnel</a>
+        <a  class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a  class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a  class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a  class="btn btn-sm btn-outline-success" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
 <h1 class="titreh1"> Renseignez votre parcours professionnel</h1>
 
+<!--
 <div class="cadrePage">
     <div class="buttonAdd">
         <a onclick="cloning()" class="btn btn-primary float-right" id="clone"  title="Ajouter une expérience professionnelle"><img src="/images/add1.png" width="25px"></a>
     </div>
 </div>
+-->
 
 
 <form method="post" th:action="@{'/addExperience/'+${user.id}}" th:object="${experience}">
@@ -67,7 +69,7 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="trainingStartDate">Début</label>
-                    <input type="text" th:value="trainingstartdate" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
+                    <input type="text" th:value="begYear" th:field="*{begYear}" class="form-control" id="trainingStartDate" placeholder="2000">
                 </div>
 
             <div class="form-group  col-md-2">
@@ -80,7 +82,7 @@
 
                 <div class="actuel form-group col-md-2">
                     <label for="trainingEndDate">Fin</label>
-                    <input type="text" th:value="trainingenddate" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
+                    <input type="text" th:value="endYear" th:field="*{endYear}" class="form-control" id="trainingEndDate" placeholder="2020">
                 </div>
             </div>
 

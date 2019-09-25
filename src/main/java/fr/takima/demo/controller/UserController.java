@@ -71,7 +71,7 @@ public class UserController {
     oldUser.setLastName(user.getLastName());
     oldUser.setMobilePhone(user.getMobilePhone());
     userDAO.save(oldUser);
-    return new RedirectView("/addFormation/"+id );
+    return new RedirectView("/editAccount/"+id );
   }
 
   @GetMapping("/addFormation/{id}")
@@ -111,7 +111,7 @@ public class UserController {
     oldFormation.setEndYear(formation.getEndYear());
     attrs.addFlashAttribute("confirmation", "Vos changements ont été sauvegardés!");
     formationDAO.save(oldFormation);
-    return new RedirectView("/addExperience/"+user.getId());
+    return new RedirectView("/editFormation/"+user.getId());
   }
 
   @GetMapping("/editExperience/{id}")
@@ -135,7 +135,7 @@ public class UserController {
     oldExperience.setJobTitle(experience.getJobTitle());
     attrs.addFlashAttribute("confirmation", "Vos changements ont été sauvegardés!");
     experienceDAO.save(oldExperience);
-    return new RedirectView("/viewCV/"+user.getId());
+    return new RedirectView("/editExperience/"+user.getId());
   }
 
 
@@ -172,4 +172,22 @@ public class UserController {
     return "viewCV";
   }
 
+  @GetMapping("/deleteUser/{id}")
+  public RedirectView deleteUser(Model m, @PathVariable long id, RedirectAttributes attrs) {
+    User user=userDAO.findById(id).get();
+    try{
+      Formation formation = formationDAO.findByUser(user);
+      formationDAO.delete(formation);
+    }
+    catch(Exception e){System.out.println("Pas de formation à supprimer");}
+
+    try{
+      Experience experience = experienceDAO.findByUser(user);
+      experienceDAO.delete(experience);
+    }
+    catch(Exception e){System.out.println("Pas d'expérience à supprimer");}
+    userDAO.delete(user);
+    attrs.addFlashAttribute("message", "Utilisateur supprimé! Sa formation et son expérience ont aussi été supprimé");
+    return new RedirectView("/");
+  }
 }

@@ -14,20 +14,20 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
-        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
-        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
+        <a class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a  class="btn btn-sm btn-outline-success" id="goFormationInfo">Etudes</a>
+        <a  class="btn btn-sm btn-outline-secondary" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
 <h1 class = "text-center"> Renseigner vos études </h1>
 
-<div class="cadrePage">
+<!--<div class="cadrePage">
     <div class="buttonAdd">
         <a onclick="cloning()" class="btn btn-primary float-right" id="clone" title="Ajouter une formation supplémentaire" ><img src="/images/add1.png" width="25px"></a>
     </div>
-</div>
+</div>-->
 
 <form method="post" th:action="@{'/addFormation/'+${user.id}}" th:object="${formation}">
     <div class="cadrePage" id="formulaire">

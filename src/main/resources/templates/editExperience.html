@@ -15,10 +15,10 @@
 <nav class="navbarSiteWeb navbar-dark bg-dark">
     <!-- Navbar content -->
     <form class="form-inline">
-        <a href="./" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
-        <a href="./createAccount" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations personnelles</a>
-        <a href="./addFormation" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
-        <a href="./addExperience" class="btn btn-outline-success" id="goProInfo">Parcour Professionnel</a>
+        <a href="../" class="btn btn-sm btn-outline-secondary" id="goHomePage">Acceuil</a>
+        <a th:href="@{'../editAccount/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goPersoInfo">Informations Personnelles</a>
+        <a th:href="@{'../editFormation/'+${user.id}}" class="btn btn-sm btn-outline-secondary" id="goFormationInfo">Etudes</a>
+        <a th:href="@{'../editExperience/'+${user.id}}" class="btn btn-sm btn-outline-success" id="goProInfo">Parcour Professionnel</a>
     </form>
 </nav>
 
@@ -94,7 +94,7 @@
 
     <div class="cadrePage">
         <div class="buttonSave">
-            <button type="submit" class="btn btn-primary" id="saveProInfo"> Enregistrer les informations et accéder à votre CV </button>
+            <button type="submit" class="btn btn-primary" id="saveProInfo"> Sauvegarder les modifications</button>
         </div>
     </div>
 
